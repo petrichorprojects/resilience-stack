@@ -4,6 +4,28 @@ All notable changes documented per [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## [1.5.0-kit-2] — 2026-05-26 (Week 2)
+
+### Added — Kit 2: revenue-story-audit (full depth)
+- `evals/revenue-story-audit/`: 3 cases (NorthStack baseline, refuse pre-revenue, adversarial vague-claims)
+- `examples/revenue-story-audit/`: input + trajectory + 5 deliverables + post-engagement-notes + board-brief sample
+- `case-studies/revenue-story-audit/case-01-fintech-ops-layer.md` (833w)
+- `skills/growth/revenue-story-audit/scoring/revenue-rubric.md` — 10-dim rubric (0-30 → Reconciled/Drifting/Inflated)
+- `skills/growth/revenue-story-audit/formatters/board-brief.md` — sub-skill compressing 5 deliverables → 1-page brief
+- `marketing/essays/revenue-story-audit.md` (1962w)
+- `marketing/quizzes/revenue-story-audit.md` — 5-question Tally diagnostic
+- `marketing/videos/revenue-story-audit.md` — 6-shot Loom shot list
+- `marketing/launch-templates/revenue-story-audit.md` — X + LinkedIn + Substack + email bundle
+
+Synthetic company: NorthStack (fintech ops layer, Series B, $20M ARR). Composite Inflated 22/30.
+
+### Pending Phil
+- Tally URL + Loom URL
+- Outside-Petrichor essay review (2 reviewers)
+- Monday 2026-05-26 launch posts
+
+---
+
 ## [1.5.0-kit-1] — 2026-05-19 (Week 1)
 
 ### Added — Kit 1: relevancy-audit (full depth)

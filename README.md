@@ -31,7 +31,7 @@ These skills ship with the full Resilience Stack toolkit: 3 eval cases, worked e
 | Kit | Skill | Status | Quiz | Video | Essay |
 |-----|-------|--------|------|-------|-------|
 | 1 | [⭐ relevancy-audit](skills/positioning/relevancy-audit) | Week 1 (2026-05-19) | [marketing](marketing/quizzes/relevancy-audit.md) | [shot list](marketing/videos/relevancy-audit.md) | [essay](marketing/essays/relevancy-audit.md) |
-| 2 | revenue-story-audit | Week 2 (pending) | — | — | — |
+| 2 | [⭐ revenue-story-audit](skills/growth/revenue-story-audit) | Week 2 (2026-05-26) | [marketing](marketing/quizzes/revenue-story-audit.md) | [shot list](marketing/videos/revenue-story-audit.md) | [essay](marketing/essays/revenue-story-audit.md) |
 | 3 | competitive-narrative-stress-test | Week 3 (pending) | — | — | — |
 | 4 | pricing-authority-diagnostic | Week 4 (pending) | — | — | — |
 | 5 | investor-story-forensics | Week 5 (pending) | — | — | — |
