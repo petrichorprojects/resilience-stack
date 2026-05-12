@@ -4,6 +4,28 @@ All notable changes documented per [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## [1.5.0-kit-4] — 2026-06-09 (Week 4)
+
+### Added — Kit 4: pricing-authority-diagnostic (full depth)
+- `evals/pricing-authority-diagnostic/`: 3 cases (Helix baseline, refuse pre-PMF, adversarial sales sanitization)
+- `examples/pricing-authority-diagnostic/`: input + trajectory + 5 deliverables + post-engagement + board-brief sample
+- `case-studies/pricing-authority-diagnostic/case-01-healthcare-scheduling-saas.md` (999w)
+- `skills/growth/pricing-authority-diagnostic/scoring/pricing-rubric.md` — Helix 18/30 Eroding
+- `skills/growth/pricing-authority-diagnostic/formatters/board-brief.md`
+- `marketing/essays/pricing-authority-diagnostic.md` (2486w)
+- `marketing/quizzes/pricing-authority-diagnostic.md` — 5-Q, 4 tiers
+- `marketing/videos/pricing-authority-diagnostic.md`
+- `marketing/launch-templates/pricing-authority-diagnostic.md`
+
+Synthetic: Helix (healthcare scheduling SaaS, $28M ARR). Discount climb 8→21%, NRR 108→96%, 30mo no price change. Root cause 38/31/19/12.
+
+### Pending Phil
+- Tally + Loom URLs
+- Outside review
+- Monday 2026-06-09 launch
+
+---
+
 ## [1.5.0-kit-3] — 2026-06-02 (Week 3)
 
 ### Added — Kit 3: competitive-narrative-stress-test (full depth)
