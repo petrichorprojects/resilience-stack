@@ -1,154 +1,164 @@
-# Relevancy Audit — Scoring Rubric
+# Relevancy Audit Scoring Rubric
 
-## Overview
-All scores use evidence from the participant's own responses. Never assign a score without citing the specific answer that drove it.
+A 10-dimension diagnostic. Score each 0-3. Total 0-30. Composite maps to Decay Stage (Drift / Disconnect / Displacement).
 
----
+This rubric is the spine of every relevancy-audit run. Use it after Phases 2-5 of the skill, once you have enough evidence to anchor each dimension to a number rather than a feeling.
 
-## Phase 2: Customer Amnesia Test
+## How to Use
 
-### Description Gap (1-10)
-How far apart is how customers describe them vs. how they describe themselves?
+**When to score**: After Phase 5 (Competitive Relevancy Mapping). Earlier and you're scoring vibes. Later and you've forgotten the evidence. The right moment is when you have all of: win/loss data for the trailing 4 quarters, a buyer-language artifact (survey, transcript, or sales-call corpus), one analyst document, and at least three customer references contacted in the last 90 days.
 
-| Score | Criteria | Evidence Pattern |
-|-------|----------|-----------------|
-| 1-2 | **Aligned.** Customer language matches current positioning. | Participant says customers would use the same terms the company uses. No lag between internal and external language. |
-| 3-4 | **Minor drift.** Customers use slightly outdated language but capture the core value. | "They'd probably say [old tagline] but they'd also mention [current capability]." Minor vocabulary gap. |
-| 5-6 | **Material drift.** Customers describe the company that existed 1-2 years ago. | Participant acknowledges customer perception is "a version behind." The company has evolved but the market's mental model hasn't. |
-| 7-8 | **Disconnected.** Customer description misses current differentiation entirely. | Participant can't confidently predict what customers would say, or predicts something materially different from current positioning. |
-| 9-10 | **Invisible.** Customers can barely articulate what the company does. | "They'd probably just say we're a [generic category] company." Zero differentiation in customer perception. |
+**Evidence rule**: Every score requires a specific evidence anchor. "It feels worse" is not evidence. "Win rate moved from 38% to 24% across Q2 2024 - Q1 2026, a 37% relative drop" is evidence. If you cannot produce evidence at the level the dimension demands, score it `INVESTIGATE` and treat the missing data itself as a Stage 2 signal — you are running a positioning function blind.
 
-### Value Decay (1-10)
-How much has the original reason customers chose them been commoditized?
-
-| Score | Criteria | Evidence Pattern |
-|-------|----------|-----------------|
-| 1-2 | **Original differentiation holds.** No competitor has matched the reason customers chose them. | "We won because of [X] and no one else does [X] yet." Clear, specific, defensible. |
-| 3-4 | **Slight erosion.** 1-2 competitors now offer similar capability. | "A couple of competitors have started doing [X] but we're still ahead." Gap is closing. |
-| 5-6 | **Partially commoditized.** The original "why us" is now common but execution quality still differs. | "Everyone claims [X] now, but we're better at it." The differentiation has shifted from "we have it" to "we do it better" — a weaker position. |
-| 7-8 | **Largely commoditized.** The original differentiator is now table stakes. | "I think customers chose us because of [security/reliability/ease of use]." These are expected features, not differentiators. |
-| 9-10 | **Fully commoditized.** The original reason to choose is now the minimum bar for every competitor. | Participant struggles to name what originally differentiated them, or names something every competitor now offers. |
-
-### Consideration Risk (1-10)
-How likely are customers to consider alternatives if re-evaluating today?
-
-| Score | Criteria | Evidence Pattern |
-|-------|----------|-----------------|
-| 1-2 | **Loyal with conviction.** Customers would choose again without hesitation. | Participant is confident customers would say "absolutely" with no qualifiers. Can name specific reasons. |
-| 3-4 | **Loyal with minor exploration.** Would choose again but would do a quick market scan. | "They'd probably still choose us but they'd look at what else is out there." |
-| 5-6 | **Loyal with inertia.** Staying because switching is hard, not because conviction is strong. | "They're staying because of integrations/contracts/switching costs." Renewal ≠ conviction. |
-| 7-8 | **At risk with trigger events.** One catalyst (contract renewal, new leadership, competitor outreach) could shift them. | Participant mentions competitors customers have brought up. "We've heard [Competitor X] mentioned a few times." |
-| 9-10 | **Actively at risk.** Customers are already evaluating or would seriously consider alternatives immediately. | "To be honest, I think a few would look at [Competitor] seriously." Or: can't articulate why customers would stay. |
+**Scoring discipline**: Score independently first, then converge. If facilitator and participant disagree by more than 1 point on any dimension, the participant must produce evidence that pulls the score down. The default direction is conservative: when in doubt, score the higher (more decayed) value. This counteracts the natural tendency of incumbent teams to flatter themselves on positioning health.
 
 ---
 
-## Phase 3: Market Archaeology
+## Dimensions
 
-### Detection Speed (1-5)
+### 1. Win Rate Trend
+**What it measures**: Direction and magnitude of close-win rate over the trailing 4 quarters.
+**Evidence required**: Quarterly win/loss data, qualified-ops-to-closed-deals ratio, consistent stage definitions across the window.
 
-| Score | Criteria |
-|-------|----------|
-| 1 | **Blind.** Last to know about market shifts. Learns from customers or press after competitors have already repositioned. Average detection lag: 9+ months. |
-| 2 | **Slow.** Detects shifts 6-9 months after first signals. No formal signal monitoring. Relies on anecdotal observation. |
-| 3 | **Average.** Detects within 3-6 months. Has some monitoring but it's informal or inconsistent. |
-| 4 | **Fast.** Detects within 1-3 months. Has deliberate signal monitoring (competitor tracking, customer advisory board, analyst relationships). |
-| 5 | **Leading.** Detects shifts before competitors. Often identifies signals before the market consensus. Has systematic signal detection infrastructure. |
+- **0** - Win rate stable or improving (within ±2 percentage points).
+- **1** - Win rate declining 3-8% absolute over 2 quarters, or 10-20% relative drop.
+- **2** - Win rate declining 9-15% absolute over 2 quarters, or 21-30% relative drop.
+- **3** - Win rate declining 16%+ absolute, or 30%+ relative drop, or pattern persists across 3+ quarters.
 
-### Response Speed (1-5)
+### 2. Sales Cycle Length Trend
+**What it measures**: Days from first-meeting to closed-won, trailing 4 quarters vs. prior 4 quarters.
+**Evidence required**: CRM-derived cycle length by segment (mid-market and enterprise scored separately if mixed).
 
-| Score | Criteria |
-|-------|----------|
-| 1 | **Frozen.** 12+ months to meaningful change after detection. Organizational inertia, consensus-seeking, or denial prevents action. |
-| 2 | **Slow.** 6-12 months. Acknowledges shifts but decision-making is slow. Multiple approval layers or "let's watch it" culture. |
-| 3 | **Moderate.** 3-6 months. Can mobilize but requires significant internal alignment before acting. |
-| 4 | **Fast.** 1-3 months. Leadership can make positioning decisions quickly. Has authority concentrated enough to act. |
-| 5 | **Immediate.** Under 1 month. Treats signal detection as a trigger for action, not discussion. Small team or decisive leadership. |
+- **0** - Cycle stable or shortening (within ±5%).
+- **1** - Cycle extended 6-15%.
+- **2** - Cycle extended 16-30%.
+- **3** - Cycle extended 31%+, or extension concentrated in your strategic segment.
+
+### 3. Share of Voice Trend
+**What it measures**: Your share of category mentions (analyst reports, search interest, earned press, peer review-site presence) vs. top 3 competitors.
+**Evidence required**: 18-month SoV chart from a real source (Ahrefs / Gartner Peer Insights / G2 / Mention / analyst transcript corpus). Internal "we feel quiet" is not evidence.
+
+- **0** - SoV growing faster than spend.
+- **1** - SoV growing in line with spend.
+- **2** - SoV flat despite stable or rising spend.
+- **3** - SoV flat or declining despite 1.5×+ increase in marketing spend, or competitor SoV is now 2×+ yours.
+
+### 4. Buyer Language Match
+**What it measures**: Percentage of the top 12 buyer-survey terms (or top 12 terms from a sales-call transcript corpus) that appear verbatim in your live positioning surface — homepage, top-of-funnel ad copy, primary one-pager.
+**Evidence required**: A buyer-language artifact and a copy-paste audit of your live positioning surface. Synonyms do not count. Verbatim only.
+
+- **0** - 9-12 of 12 buyer terms appear verbatim.
+- **1** - 6-8 of 12 buyer terms appear verbatim.
+- **2** - 3-5 of 12 buyer terms appear verbatim.
+- **3** - 0-2 of 12 buyer terms appear verbatim.
+
+### 5. Unknown Competitor Mentions
+**What it measures**: Number of lost deals in the trailing quarter where the winning competitor was not on your battlecard or known to the sales leader at deal start.
+**Evidence required**: Loss-reason audit. If you do not maintain coded loss reasons, score this `3` — the absence of the data is the finding.
+
+- **0** - Zero unknown competitor mentions in the quarter.
+- **1** - One unknown competitor mention.
+- **2** - Two unknown competitor mentions, or the same unknown name appears twice.
+- **3** - Three or more unknown competitor mentions, or one unknown competitor name appears in 3+ losses (they are a category-shaping competitor and you do not see them).
+
+### 6. Analyst Language Drift
+**What it measures**: Trajectory of your label across the trailing 4 analyst documents (Gartner MQ, Forrester Wave, IDC, vertical analyst, peer-review platform leader designations).
+**Evidence required**: Side-by-side language extract from prior and current analyst artifacts.
+
+- **0** - Stable or strengthening designation ("Leader" → "Leader," or "Strong Performer" → "Leader").
+- **1** - Held position but language warmed less ("Leader (with reservations)" or new caveats added).
+- **2** - Down-shifted by one tier ("Leader" → "Established Player," "Visionary" → "Niche Player").
+- **3** - Down-shifted by two tiers, dropped from inclusion, or new "lagging" / "legacy" language introduced.
+
+### 7. Category Mental Model Match
+**What it measures**: Whether buyers place you in the category you believe you compete in. Tested by asking 10 recent prospects (won and lost) "what category of tool is [Company]?" and comparing answers to your intended category.
+**Evidence required**: 10-prospect mini-survey or coded discovery-call transcripts.
+
+- **0** - 8+ of 10 prospects name your intended category exactly.
+- **1** - 5-7 of 10 name your intended category; rest name an adjacent category.
+- **2** - 2-4 of 10 name your intended category; majority name an older or broader category.
+- **3** - 0-1 of 10 name your intended category, or buyers actively describe you as a category you have explicitly moved away from.
+
+### 8. Reference Customer Drift
+**What it measures**: How accurately your top 5 reference customers describe your current positioning when asked, "in your words, what does [Company] do for you?"
+**Evidence required**: 5 recent reference calls (within 90 days) with verbatim transcripts or notes.
+
+- **0** - 4-5 of 5 references describe you using current positioning language and current value prop.
+- **1** - 2-3 of 5 describe you using current positioning; rest describe the company you were 18 months ago.
+- **2** - 1 of 5 uses current positioning; majority describe a prior version of the company.
+- **3** - 0 of 5 use current positioning; references describe a company that no longer exists, or describe a generic category ("they do legal software").
+
+### 9. Pricing Authority
+**What it measures**: Discount discipline and net-revenue-retention proxy. Two sub-metrics scored together: average discount on closed-won (vs. list) and NRR or logo retention trend.
+**Evidence required**: Discount field in CRM, renewal / NRR report.
+
+- **0** - Average discount <10% and NRR >110% (or logo retention >95%).
+- **1** - Average discount 10-20% or NRR 100-110%.
+- **2** - Average discount 21-30% or NRR 90-100%.
+- **3** - Average discount >30%, or NRR <90%, or pricing is increasingly negotiated at every deal regardless of size.
+
+### 10. Internal Conviction Match
+**What it measures**: Whether leadership, sales, and marketing tell the same story about why customers should buy. Tested by asking 5 internal stakeholders (CEO, CRO, CMO, Head of Product, top AE) "in one sentence, why does our best-fit customer choose us?" and comparing answers.
+**Evidence required**: 5 internal one-sentence answers, collected independently, no coaching.
+
+- **0** - All 5 answers share the same core differentiator phrased differently.
+- **1** - 3-4 of 5 share the same core; 1-2 emphasize a different (but adjacent) differentiator.
+- **2** - 2 of 5 share a core; the rest fragment across feature lists, generic claims, or "it depends."
+- **3** - No two answers agree on the core differentiator, or the top AE's answer is materially different from the CEO's. The company does not have a positioning — it has positionings.
 
 ---
 
-## Phase 5: Competitive Relevancy Map
+## Worked Example: Synthetic Co
+**Vertical SaaS, $30M ARR, legal operations.**
 
-### Dimension Scoring
+Evidence drawn from `examples/relevancy-audit/input.md` and `deliverable-5-scorecard.md`.
 
-For each of the 6 dimensions, score the gap between the company's position and where the market is heading:
+| # | Dimension | Score | Evidence |
+|---|-----------|-------|----------|
+| 1 | Win Rate Trend | 3 | 38% (Q2 2024) → 24% (Q1 2026). 14 pt absolute drop, 37% relative. |
+| 2 | Sales Cycle Length Trend | 2 | 47d → 62d, +32% extension across same window. |
+| 3 | Share of Voice Trend | 2 | Flat 18 months at 2× marketing spend. |
+| 4 | Buyer Language Match | 3 | Positioning statement "the leading legal operations platform for modern firms" contains 0 of top 12 buyer-survey terms (deliverable-5 audit confirms <40% match overall, verbatim count = 0). |
+| 5 | Unknown Competitor Mentions | 3 | 3 lost deals last quarter cited NewEntrant by name; sales team did not know NewEntrant existed. |
+| 6 | Analyst Language Drift | 2 | Q4 2025 analyst quadrant moved Synthetic Co from "Leader" to "Established Player." One-tier down-shift. |
+| 7 | Category Mental Model Match | 2 | Recent losses described category as "AI legal workflow" (NewEntrant's framing) or "trusted incumbent" (LegacyVendor's framing). Synthetic Co's intended "modern legal ops platform" framing absent in lost-deal language. |
+| 8 | Reference Customer Drift | 1 | Recent wins cited integrations, compliance reports, partner stickiness — all real but none match the live positioning. References describe a feature bundle, not a position. |
+| 9 | Pricing Authority | 1 | Discount data not surfaced in input; cycle extension and win-rate drop typically correlate with rising discount pressure. Scored conservatively at 1 pending CRM audit. |
+| 10 | Internal Conviction Match | 3 | Recent wins attributed to 3 different reasons (integrations, compliance, stickiness) by 3 different reps. No shared core differentiator surfaced. Internal story is fragmented. |
 
-| Gap Score | Meaning |
-|-----------|---------|
-| **Ahead** | Company is positioned closer to market direction than competitors. Relevancy advantage. |
-| **Aligned** | Company is tracking with market direction. No decay on this dimension. |
-| **Behind (minor)** | Market is moving and company hasn't adjusted yet, but gap is small (< 6 months of drift). |
-| **Behind (major)** | Competitors are materially closer to where market is heading. Active decay zone. |
-| **Displaced** | Company's position on this dimension is no longer part of the market conversation. |
+**Total: 22 / 30**
+**Stage: Stage 2 (Disconnect), borderline Stage 3.**
 
-Dimensions scored as "Behind (major)" or "Displaced" = **Active Decay Zones**.
+Math check: 3 + 2 + 2 + 3 + 3 + 2 + 2 + 1 + 1 + 3 = 22. Sits 1 point inside the 21-30 (Stage 3) band, with two conservative-by-default scores on dimensions 9 and 10 that could move higher with a CRM discount audit. Treat Synthetic Co as a Stage 2 case actively decaying into Stage 3 within 90 days absent intervention.
 
----
-
-## Phase 6: Decay Rate — Stage Classification
-
-### Stage Determination
-
-Use the weight of evidence across all phases:
-
-**Stage 1: Drift**
-- Description Gap: 3-5
-- Value Decay: 3-5
-- Detection Speed: 3+
-- 0-1 Active Decay Zones
-- Signals are present but individually explainable
-- Revenue metrics show slight softening, nothing alarming
-
-**Stage 2: Disconnect**
-- Description Gap: 5-8
-- Value Decay: 5-8
-- Detection Speed: 1-3
-- 2-3 Active Decay Zones
-- Competitors using language the company doesn't
-- Customers mention alternatives or hesitate on re-evaluation
-- Revenue showing clear pattern (win rate, cycle length, pipeline quality)
-
-**Stage 3: Displacement**
-- Description Gap: 8-10
-- Value Decay: 8-10
-- Multiple Active Decay Zones
-- Market conversation happening without them
-- Consideration rates collapsing (not just losing deals — not being invited)
-- Talent starting to leave for "more relevant" companies
-
-### Decay Clock Calculation
-
-```
-If Stage 1 (Drift):
-  Base = (10 - Description Gap) × 3
-  Adjustment = -(Average Response Lag in months)
-  Months to Disconnect = max(3, min(24, Base + Adjustment))
-
-If Stage 2 (Disconnect):
-  Base = (10 - Description Gap) × 2
-  Adjustment = -(Average Response Lag in months)
-  Months to Displacement = max(3, min(24, Base + Adjustment))
-
-If Stage 3 (Displacement):
-  Months remaining = "Recovery requires a fundamental repositioning, not incremental adjustment."
-  Do not give a number — give the honest assessment that the positioning is already displaced.
-```
+The composite hides a more aggressive truth: dimensions 4, 5, and 7 — the load-bearing indicators of disconnect — are all at 3. Per the stage classification override below, this combination alone justifies a Stage 2 minimum even if the composite were lower. Synthetic Co does not have a measurement problem. It has a positioning problem its measurements are now catching up to.
 
 ---
 
-## Signal Prioritization (Phase 7)
+## Composite Score → Stage Mapping
 
-### Priority Scoring
+| Composite | Stage | Interpretation | Decay Clock Default |
+|-----------|-------|----------------|---------------------|
+| 0-9 | **Stage 1 — Drift** | Positioning still accurate but diverging from market direction. Signals individually explainable. | 12-18 months to Disconnect |
+| 10-20 | **Stage 2 — Disconnect** | Positioning and market conversation have materially diverged. Multiple signals converge. | 6-12 months to Displacement |
+| 21-30 | **Stage 3 — Displacement** | Market has moved on. Consideration rates collapsing. Recovery requires repositioning, not refinement. | Decay clock not meaningful — fundamental repositioning required |
 
-For each signal classified as SIGNAL:
+**Borderline rule**: A composite within 2 points of the next band, with rising trend in dimensions 1-3, should be classified at the higher stage. Decay is asymmetric — it accelerates faster than it reverses.
 
-| Dimension | 1 | 2 | 3 | 4 | 5 |
-|-----------|---|---|---|---|---|
-| **Decay Impact** | Minor — affects perception at the margins | Noticeable — drives one decay dimension | Significant — drives 2+ decay dimensions | Major — central to the positioning gap | Critical — if unaddressed, accelerates to next stage |
-| **Response Speed** | 12+ months to act | 6-12 months | 3-6 months | 1-3 months | Can act this month |
-| **Cost of Delay** | No change if delayed 3 months | Minor — gap widens slightly | Moderate — competitor advantage grows | High — window of opportunity closing | Critical — 3-month delay = irreversible |
+**Concentration override**: If dimensions 4, 5, and 7 are all 3, classify Stage 2 minimum regardless of composite. Those three dimensions measure whether the market is using your language, whether you can see who is winning, and whether buyers place you in your intended category. All three failing simultaneously is the signature of disconnect, not drift.
 
-**Priority tiers:**
-- **Tier 1 (First 30 days)**: Total score 12+ (out of 15)
-- **Tier 2 (Days 31-60)**: Total score 9-11
-- **Tier 3 (Days 61-90)**: Total score 6-8
-- **Park**: Total score under 6
+---
+
+## Notes for Facilitators
+
+- **Anchor every score to a specific response or document.** A rubric without evidence is theater.
+- **Score conservatively when data is missing.** Absent data is itself a Stage 2 signal: a positioning function that cannot measure its own decay is decaying faster than it knows.
+- **Refuse to round down on flattery.** When a participant pushes back ("we feel stronger than that"), ask for the evidence that would lower the score. If they cannot produce it, the score holds.
+- **Run the rubric live, not after.** Scoring in the room with the participant forces evidence to surface. Scoring after lets memory smooth the edges.
+- **Stage classification overrides composite when evidence is concentrated.** The concentration override above is not a tiebreaker — it is the primary instruction when 4, 5, and 7 all fail.
+- **Re-score quarterly.** A one-time rubric is a diagnostic. A repeated rubric is a capability. The companies that stay relevant repeat the score.
+- **The rubric is not the deliverable.** The deliverable is the action plan the rubric justifies. If you finish scoring and the room does not know what to do Monday morning, you stopped too early.
+
+---
+
+*Resilience Stack v1.5 · CC BY 4.0 · Petrichor Projects*
