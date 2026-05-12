@@ -28,7 +28,7 @@ All notable changes documented per [Keep a Changelog](https://keepachangelog.com
 - 5 Tally quiz URLs + Beehiiv list config
 - 5 Loom video recordings
 - Outside-Petrichor review (2 strategists per essay)
-- GitHub org `petrichor-projects` setup + npm `resilience-stack` publish
+- GitHub org `petrichorprojects` setup + npm `resilience-stack` publish
 - Weekly Monday posts (LinkedIn, X, Substack) Weeks 1-5
 - HN submission Tuesday 9am ET Week 5
 

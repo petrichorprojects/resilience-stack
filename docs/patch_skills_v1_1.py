@@ -10,7 +10,7 @@ import os
 import re
 from pathlib import Path
 
-ROOT = Path("/Users/philipprimmler/Downloads/Projects/resilience-stack/skills")
+ROOT = Path(__file__).resolve().parent.parent / "skills"
 
 # {skill_name: (track, tightened_description, when_not_to_use_block)}
 PATCHES = {

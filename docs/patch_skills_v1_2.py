@@ -15,7 +15,7 @@ import re
 import yaml
 from pathlib import Path
 
-ROOT = Path("/Users/philipprimmler/Downloads/Projects/resilience-stack/skills")
+ROOT = Path(__file__).resolve().parent.parent / "skills"
 
 # {skill_name: {field: value}}
 META = {

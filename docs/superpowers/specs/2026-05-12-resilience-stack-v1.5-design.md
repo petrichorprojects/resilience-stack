@@ -259,7 +259,7 @@ These are tracked in `ROADMAP.md`. Decisions on which to pursue in v1.6 happen p
 ## 13. Open Decisions
 
 - Domain: `resilience-stack.com` standalone vs `petrichorgrowth.com/stack` subpath. **Default**: subpath unless launch traction justifies standalone.
-- GitHub org: `petrichor-projects` vs Phil's personal. **Default**: `petrichor-projects` org for repo, single-owner for now.
+- GitHub org: `petrichorprojects` vs Phil's personal. **Default**: `petrichorprojects` org for repo, single-owner for now.
 - Trademark filing: defer until brand traction. ~$350 USPTO investment becomes worthwhile after Kit 3 lands.
 
 ---

@@ -1,0 +1,34 @@
+# Resilience Stack — CODEOWNERS
+# Format: <pattern> <owner> [<owner>...]
+# Auto-assigns reviewers when a PR touches matching paths.
+
+# Default owner — every PR is reviewed by Petrichor maintainers
+*                                       @rimmler44
+
+# Skills require maintainer review (highest bar)
+/skills/                                @rimmler44
+/meta-skills/                           @rimmler44
+
+# Evals + examples + case studies — content review
+/evals/                                 @rimmler44
+/examples/                              @rimmler44
+/case-studies/                          @rimmler44
+
+# Marketing — Petrichor brand authority
+/marketing/                             @rimmler44
+/docs/manifesto.md                      @rimmler44
+
+# Repository infrastructure — operational risk
+/.github/                               @rimmler44
+/bin/                                   @rimmler44
+/install.sh                             @rimmler44
+/package.json                           @rimmler44
+/SECURITY.md                            @rimmler44
+/LICENSE                                @rimmler44
+
+# Documentation
+/docs/                                  @rimmler44
+/README.md                              @rimmler44
+/CHANGELOG.md                           @rimmler44
+/ROADMAP.md                             @rimmler44
+/CONTRIBUTING.md                        @rimmler44

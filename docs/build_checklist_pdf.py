@@ -13,7 +13,8 @@ import textwrap
 
 # Petrichor "Clarity Precedes Momentum" brutalist editorial system —
 # extracted from Figma Make design system (New Pet Proj Design System, v22).
-OUT = "/Users/philipprimmler/Downloads/Projects/resilience-stack/docs/skill-stack-launch-checklist.pdf"
+_HERE = __import__("pathlib").Path(__file__).parent
+OUT = str(_HERE / "skill-stack-launch-checklist.pdf")
 PETRICHOR_INK = HexColor("#000000")     # pure black, institutional briefing
 PETRICHOR_RUST = HexColor("#000000")    # accents stay black — brutalist palette
 PETRICHOR_CREAM = HexColor("#F4EFE7")   # warm off-white background

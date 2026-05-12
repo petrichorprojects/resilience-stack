@@ -18,13 +18,13 @@
   ],
   "author": "Petrichor Projects (https://petrichorgrowth.com)",
   "license": "CC-BY-4.0",
-  "homepage": "https://github.com/petrichor-projects/resilience-stack",
+  "homepage": "https://github.com/petrichorprojects/resilience-stack",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petrichor-projects/resilience-stack.git"
+    "url": "git+https://github.com/petrichorprojects/resilience-stack.git"
   },
   "bugs": {
-    "url": "https://github.com/petrichor-projects/resilience-stack/issues"
+    "url": "https://github.com/petrichorprojects/resilience-stack/issues"
   },
   "files": [
     "bin/",
