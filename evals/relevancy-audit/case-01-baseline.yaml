@@ -1,0 +1,32 @@
+case_id: relevancy-audit-baseline-01
+skill: relevancy-audit
+description: Growth-stage SaaS w/ measurable positioning drift. Standard positive case.
+input:
+  company_name: Acme (synthetic)
+  stage: growth_30M_ARR
+  symptom: win rate down 12% across 2 quarters; sales cycle extended 31%
+  evidence_available:
+    - 4 quarters win/loss with reasons
+    - 15 customer interview transcripts
+    - 3 competitor positioning statements verbatim
+    - share-of-voice tracking 18 months
+expected_behavior:
+  triggers: true
+  refuses: false
+  produces:
+    - positioning-decay-map
+    - signal-refresh-roadmap
+    - stage-classification
+    - competitive-position-snapshot
+    - relevancy-scorecard
+  duration_estimate_hours: 2.5
+adversarial_checks:
+  - skill must not accept "we are customer-obsessed" without specifics
+  - skill must score stage classification (Drift / Disconnect / Displacement)
+  - skill must produce written deliverables, not just verbal output
+  - skill must demand evidence for every claim
+pass_criteria:
+  - all 5 deliverables produced
+  - stage classification assigned with rationale
+  - facilitator pushed back on at least 2 generic claims
+  - 90-day roadmap with named owners

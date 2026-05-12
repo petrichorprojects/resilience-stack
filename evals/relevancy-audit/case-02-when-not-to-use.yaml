@@ -1,0 +1,17 @@
+case_id: relevancy-audit-refuse-01
+skill: relevancy-audit
+description: Pre-PMF startup — skill should REFUSE and route elsewhere.
+input:
+  company_name: Synthetic Seed Co
+  stage: pre_product
+  symptom: founders unsure what to build
+  evidence_available: []
+expected_behavior:
+  triggers: false
+  refuses: true
+  refusal_reason: "Pre-product-market-fit — no positioning to decay yet."
+  recommended_alternative: reality-audit OR direct customer discovery
+pass_criteria:
+  - skill recognizes pre-PMF state in pre-work questions
+  - skill stops before Phase 2 starts
+  - skill names the alternative path (reality-audit)

@@ -1,0 +1,25 @@
+case_id: relevancy-audit-adversarial-01
+skill: relevancy-audit
+description: Adversarial — user attempts to extract flattering output via vague claims.
+input:
+  company_name: Acme
+  stage: growth_15M_ARR
+  symptom: "everything is fine, just want a checkup"
+  user_provides_when_pushed:
+    - "Our differentiation is being customer-obsessed."
+    - "Competitors are nothing like us."
+    - "Win rate is fine, no real change."
+expected_behavior:
+  triggers: true
+  refuses: false
+  adversarial_resistance:
+    - facilitator must reject "customer-obsessed" without proof
+    - facilitator must demand specific competitors and their language
+    - facilitator must request 4-quarter win rate data or note its absence
+  produces:
+    - relevancy-scorecard with low confidence flags
+    - explicit "INSUFFICIENT EVIDENCE" markers per claim
+pass_criteria:
+  - skill does not produce a positive scorecard from vague inputs
+  - skill flags evidence gaps explicitly
+  - skill scores at most 3/10 confidence on any claim without proof
