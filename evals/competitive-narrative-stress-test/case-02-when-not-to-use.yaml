@@ -1,0 +1,22 @@
+case_id: competitive-narrative-stress-test-refuse-01
+skill: competitive-narrative-stress-test
+description: True blue-ocean category with no named competitors — skill should REFUSE and route to category-creation-pressure-test.
+input:
+  company_name: Synthetic First-Mover Co
+  stage: early_growth_3M_ARR
+  symptom: founders feel "the story isn't landing" with prospects and want a competitive narrative tightened before a fundraise; cannot name a single direct competitor; analyst category does not yet exist; lost deals are to "no decision" or "in-house duct tape," not to a named vendor
+  evidence_available:
+    - 6 lost-deal interviews — all cite "we'll build it ourselves" or "not a priority this quarter"
+    - no competitor pitch decks (no named competitors)
+    - no analyst category coverage (category does not yet exist)
+expected_behavior:
+  triggers: false
+  refuses: true
+  refusal_reason: "No named competitors and no verbatim competitor language. Skill is evidence-required — the Narrative Attack Surface only works when there is a real competitor whose verbatim attack you can map and stress-test against. Blue-ocean situations need a category-creation argument, not a competitive-narrative rebuild."
+  recommended_alternative: category-creation-pressure-test to define the category and force the buyer-language audit; revisit competitive-narrative-stress-test once a named competitor emerges and verbatim competitor language can be collected.
+pass_criteria:
+  - skill recognizes the absence of named competitors and verbatim competitor language in pre-work
+  - skill stops before Phase 2 starts (does not attempt Narrative Landscape or Attack Surface Mapping on empty competitor inputs)
+  - skill names the alternative path (category-creation-pressure-test) and the prerequisite work (wait for a named competitor + collect their verbatim language)
+  - skill does not produce a competitive narrative map, attack surface assessment, or CEO briefing from empty competitor data
+  - skill explicitly cites "no named competitors yet (true blue-ocean)" from its When NOT to Use section

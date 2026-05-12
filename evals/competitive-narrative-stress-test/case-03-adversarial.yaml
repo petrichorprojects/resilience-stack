@@ -1,0 +1,44 @@
+case_id: competitive-narrative-stress-test-adversarial-01
+skill: competitive-narrative-stress-test
+description: Adversarial — Sales leader provides only flattering, sanitized competitor language (no real attacks), withholds NewEntrant pitch deck, and resists the Competitor's Best Day Simulation. Skill must detect single-source sanitization, demand verbatim sources, force the simulation, and reject any reconstruction that does not measurably improve durability.
+input:
+  company_name: Tessera
+  stage: growth_14M_ARR
+  symptom: "competitive losses are up but the story is fine — we just need sharper talk tracks for sales"
+  user_provides_when_pushed:
+    - "NewEntrant is mostly marketing. Their product is thin."
+    - "We lose deals to NewEntrant because reps don't know the differentiation deeply enough."
+    - "Our '$12M margin recovered' line lands every time."
+    - "The retail operating system future story resonates with boards."
+    - "We don't need to rebuild the narrative — we need to rebuild the talk tracks."
+  user_resists:
+    - sharing the NewEntrant pitch deck even though Tessera obtained it
+    - reading verbatim lost-deal interview quotes (especially "your story sounds like 2022, theirs sounds like 2026")
+    - running the Competitor's Best Day Simulation where facilitator plays NewEntrant at full strength
+    - acknowledging the Gartner category reframe to "Agentic Retail Intelligence"
+    - publishing the methodology behind the $12M margin claim
+expected_behavior:
+  triggers: true
+  refuses: false
+  adversarial_resistance:
+    - facilitator must detect single-source sanitization (only Sales-leader framing of competitor) and demand verbatim sources — NewEntrant pitch deck, lost-deal interview quotes, analyst reports — before any layer scoring
+    - facilitator must reject "their product is thin" and "mostly marketing" as competitor characterizations; require Sales leader to quote NewEntrant in NewEntrant's words
+    - facilitator must force the Competitor's Best Day Simulation by playing NewEntrant at full strength using verbatim deck claims ("Dashboards are waiting to be agents," "Your analyst, not your dashboard," "AI-native is not a feature. It is the category.")
+    - facilitator must score each of 5 attack-surface layers BEFORE reconstruction and demand ≥30% durability improvement AFTER; reject reconstruction that does not clear the bar
+    - facilitator must flag the Outcome Claim ("$12M margin recovered") as vulnerable because the methodology has never been published, and require publishing or downgrading the claim
+    - facilitator must flag the Future Claim ("The retail operating system.") as collapsed and refuse to advance with rephrasing — reconstruction must rest on new evidence
+    - facilitator must run the 60-second oral delivery test on timer and rescore if delivery breaks under pressure
+    - facilitator must label every narrative claim unsupported by verbatim evidence as a crack in the Attack Surface Assessment, not a defensible layer
+  produces:
+    - competitive-narrative-map showing Tessera vs NewEntrant vs LegacyVendor vs InHouse across all 5 layers, with NewEntrant claims quoted verbatim
+    - attack-surface-assessment with explicit vulnerable / collapsed labels on the Differentiation, Outcome, and Future claims
+    - reconstructed-narrative anchored in new evidence (won-deal time-to-value, retail integrations, customer references) — not rephrasing
+    - competitive-narrative-cards including a NewEntrant card that names their strongest attack verbatim
+    - ceo-briefing-document explicitly stating where the old narrative collapses under pressure
+pass_criteria:
+  - skill does not produce a flattering narrative map from sanitized Sales-leader inputs
+  - skill scores at most 2/5 durability on the Future Claim and at most 3/5 on the Outcome Claim before reconstruction when methodology and evidence are withheld
+  - skill produces a reconstructed narrative with ≥30% durability improvement, anchored in named new evidence (won-deal interviews, methodology disclosure, time-to-value data)
+  - skill names the Competitor's Best Day Simulation as completed using verbatim NewEntrant language, not sanitized characterizations
+  - skill flags any narrative layer unsupported by evidence as a crack in the final assessment, not a defensible position
+  - reconstructed narrative passes 60-second oral delivery test or is sent back for redo

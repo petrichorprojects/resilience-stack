@@ -1,0 +1,48 @@
+case_id: competitive-narrative-stress-test-baseline-01
+skill: competitive-narrative-stress-test
+description: Growth-stage B2B SaaS retail analytics platform 6-8 months from Series B kickoff w/ measurable competitive-win-rate collapse (52% → 31%) and analyst category reframe driven by an AI-native entrant. Standard positive case.
+input:
+  company_name: Tessera (synthetic)
+  stage: growth_14M_ARR
+  symptom: lost 4 of last 7 enterprise deals to NewEntrant in Q1 2026 (vs 1 of 7 in Q3 2025); competitive win-rate dropped 52% → 31%; Gartner reframed category from "Retail Analytics" to "Agentic Retail Intelligence" adopting NewEntrant's language; 3 board members independently asked CEO "why aren't we agentic?"
+  trigger_event: Series B raise kickoff scheduled in 6-8 months
+  current_narrative_layers:
+    origin: "Built by retail operators."
+    differentiation: "Operator-grade depth, not analyst-grade breadth."
+    proof: "Used by 14 of the top 50 specialty retailers."
+    outcome: "$12M in margin recovered for customers in 2025."
+    future: "The retail operating system."
+  evidence_available:
+    - 12 lost-deal interviews Q3 2025 - Q1 2026 (8 name NewEntrant by name)
+    - 3 won-deal interviews where buyer chose Tessera over NewEntrant
+    - full NewEntrant pitch deck (verbatim across 4 key slides)
+    - LegacyVendor public site + 2 recorded sales calls
+    - Tessera 2024, 2025, Q1 2026 positioning docs
+    - Gartner reports Q4 2024 + Q1 2026 (category reframe documented)
+    - internal Tessera $12M margin methodology doc (never published)
+expected_behavior:
+  triggers: true
+  refuses: false
+  produces:
+    - competitive-narrative-map
+    - attack-surface-assessment
+    - reconstructed-narrative
+    - competitive-narrative-cards
+    - ceo-briefing-document
+  duration_estimate_hours: 2.5
+adversarial_checks:
+  - facilitator must quote NewEntrant verbatim from the pitch deck (e.g., "Dashboards are waiting to be agents.") — never paraphrase
+  - facilitator must run the Competitor's Best Day Simulation playing NewEntrant at full strength against the participant, recorded both versions
+  - facilitator must score each of the 5 attack-surface layers BEFORE reconstruction (1-5 exposure) and AFTER reconstruction with ≥30% durability improvement required to declare success
+  - facilitator must reject any reconstructed layer that is not anchored in new evidence — rephrasing the same claim with new words is not reconstruction
+  - facilitator must run the 60-second oral delivery test on the reconstructed narrative — on timer, no notes — and rescore if delivery breaks
+  - facilitator must flag the Future Claim ("The retail operating system.") as collapsed and refuse to advance until it is reconstructed with a survives-the-"okay but how"-question test
+  - facilitator must trace each claim to its origin evidence in Narrative Archaeology — any claim with no evidence trail is flagged as a crack
+pass_criteria:
+  - all 5 deliverables produced and written to ./narrative-stress-output/
+  - attack-surface durability score improves by at least 30% from pre to post reconstruction
+  - at least 2 of the 5 layers reclassified from vulnerable/collapsed to defensible with named new evidence
+  - reconstructed narrative passes 60-second oral delivery test on timer with no notes
+  - competitive narrative cards produced for all 3 competitors (NewEntrant, LegacyVendor, InHouse), each with attack / counter / proof / pivot
+  - CEO briefing document names why old narrative fails, what's changing, what gets measured, with owners and deadlines
+  - Differentiation Claim explicitly reframed to defend against "dashboards are waiting to be agents" attack, anchored in won-deal evidence (time-to-value, retail data integrations)
