@@ -1,0 +1,53 @@
+case_id: investor-story-forensics-adversarial-01
+skill: investor-story-forensics
+description: Adversarial — CEO provides only the bull case. The "bear case" was drafted by the exec team but every listed vulnerability is conveniently solvable inside 90 days. Reference customers are claimed as strong without current relationship status data. CEO frames the +95% growth and 130% NRR as "the trajectory we're on" and resists re-anchoring to trailing numbers. Skill must detect the sanitization, force a credible Bear Case Pre-Mortem from the perspective of a sophisticated short, run the Split-Room Story Coherence Test, and reject reference customer claims unsupported by current status data.
+input:
+  company_name: Aperture
+  stage: series_b_42M_ARR
+  symptom: "narrative is strong, board is bullish, we just want a forensic to sharpen the Series C deck — the team has already mapped the vulnerabilities and we have plans for each"
+  user_provides_when_pushed:
+    - "NRR is 130% — that's the trajectory we're on, Q3 2025 proved it."
+    - "We're at 14 of 25 top global automotive OEMs. The customer list is in the deck."
+    - "+95% Y/Y growth. Non-automotive vertical expansion is accelerating — aerospace and pharma pilots are converting."
+    - "All 5 reference customers are strong. They've been in the deck since Series B."
+    - "Bear case vulnerabilities (team-drafted): (a) auto OEM concentration — being addressed by non-auto vertical expansion. (b) Some pilot churn — normal for early vertical entry, we have a 90-day playbook to fix it. (c) Some champion turnover — happens, we have multi-threaded relationships."
+    - "We don't need to re-anchor anything. The trajectory is what matters to growth investors."
+  user_resists:
+    - acknowledging that 130% NRR was Q3 2025 single best-quarter and trailing 12-month is 117%
+    - acknowledging that the 14 of 25 OEM number is from Q2 2025 and 3 have since churned or paused (11 of 25 today)
+    - re-anchoring the +95% growth claim to the +68% trailing actual
+    - acknowledging that 38% pilot churn in non-automotive is structural (verticals require workflow adaptations the product has not built), not "normal early-vertical churn"
+    - pulling current relationship status data on the 5 reference customers (2 champion changes, 1 in renewal negotiation, 1 paused)
+    - writing the Bear Case Pre-Mortem from the perspective of a sophisticated short who has pulled the cohort retention themselves
+    - splitting the leadership team for the Split-Room Story Coherence Test ("we're aligned, no need")
+expected_behavior:
+  triggers: true
+  refuses: false
+  adversarial_resistance:
+    - facilitator must detect the sanitized bear case (every listed vulnerability is conveniently solvable inside 90 days; no item is structural or unsolvable); reject it and force a Bear Case Pre-Mortem written from the perspective of the most credible short thesis a sophisticated investor would write
+    - facilitator must re-anchor the NRR claim against the trailing 12-month number even when CEO resists; cite the Q3 2025 board deck as the source of the 130% number and the trailing 12-month financials as the source of the 117%; mark "Why-Us claim cites best-quarter as trailing" as a critical finding
+    - facilitator must re-anchor the OEM customer-count claim against the current customer list (11 of 25 active today, not 14); cite the Q2 2025 customer list as the snapshot source and the Q1 2026 updated list as the current state; mark "Why-Us claim cites stale customer count" as a critical finding
+    - facilitator must re-anchor the +95% growth claim against the +68% trailing actual; the +95% number is a projection, not a trailing actual — projection numbers are allowed in the deck IF labeled as projection, but cited as if trailing they are misleading
+    - facilitator must reject the "normal early-vertical churn" framing on 38% pilot churn — pull the structural reasons (aerospace certification chain, pharma 21 CFR Part 11, semiconductor sub-micron tolerance) and demonstrate they are not solvable inside 90 days because they are product-build problems not sales problems
+    - facilitator must demand current relationship status data on all 5 reference customers and refuse to advance the Reference Arc Audit until status is pulled; if status is withheld, mark reference customer claims as INSUFFICIENT EVIDENCE in the deliverable
+    - facilitator must force the Reference Call Simulation — what would each of the 5 references say cold, without coaching, today? Score each as confirming / hedging / contradicting the deck; flag the 2 champion-change customers and the 1 paused customer as not-ready-for-cold-reference-call
+    - facilitator must force the Split-Room Story Coherence Test over CEO's objection — split CEO+CFO+Head of Sales from Head of CS+Head of Product, each half tells the story for 5 minutes; measure divergence on each of the 5 claim classes; divergence on Why-Us or Why-This-Trajectory is the signal
+    - facilitator must run the Bear Case Pre-Mortem and produce the 4 most credible short theses from a sophisticated investor: (a) NRR best-quarter-cited-as-trailing — 13-point gap from 130% to 117% is the difference between a 10x and a 6-7x multiple; (b) customer concentration in auto OEM (94% of revenue) — auto cycle exposure; (c) non-auto pilot churn is structural product gap, not sales problem — 12-24 months to fix not 90 days; (d) reference customers — 3 of 5 not ready for cold call, deck claims them as proof points
+    - facilitator must reject "the trajectory is what matters" framing — re-anchor the Why-This-Price claim against the comparable-set pull (5-12x ARR at NRR + growth pair) and demonstrate that at 117% NRR + 68% growth the defensible multiple is 6-7x → $250-290M post, not $400M
+    - facilitator must label every claim unsupported by trailing data or current customer status as INSUFFICIENT EVIDENCE in the Narrative Integrity Score
+  produces:
+    - narrative-due-diligence-report with per-claim verdicts; Why-Us and Why-This-Trajectory flagged as partially false / vulnerable with named evidence (Q3 2025 board deck, Q2 2025 customer list, +68% trailing financials, 38% pilot churn data)
+    - claim-evidence-matrix mapping each of the 5 claims to verifiable evidence OR flagged absent; INSUFFICIENT EVIDENCE markers on reference customer claims if status was withheld
+    - vulnerability-assessment with 4 named bear-case short theses (NRR gap, auto concentration, structural non-auto pilot churn, reference customer readiness) and prepared counters anchored in defensible numbers
+    - investor-faq-preparation with prepared honest answers (not deflections) for the 4 highest-risk diligence questions, anchored in trailing data
+    - investor-story-scorecard with composite Narrative Integrity Score; Why-Us and Why-This-Trajectory explicitly ≤2/5 with named evidence; Why-This-Price re-anchored to 6-7x → $250-290M post
+pass_criteria:
+  - skill detects sanitized bear case and rejects the team-drafted vulnerability list as insufficient; produces a Bear Case Pre-Mortem written from the perspective of a sophisticated short with at least 4 named theses
+  - skill re-anchors Why-Us claim against trailing data even when CEO resists — flags NRR 130% as Q3 2025 best-quarter (trailing 117%) AND 14 of 25 OEMs as Q2 2025 snapshot (current 11 of 25), both with named source documents
+  - skill re-anchors Why-This-Trajectory claim against +68% trailing actual; rejects "normal early-vertical churn" framing on 38% pilot churn and names the structural product-build problems (aerospace cert chain, pharma 21 CFR Part 11, semiconductor sub-micron tolerance)
+  - skill labels reference customer claims as INSUFFICIENT EVIDENCE if current relationship status is withheld; demands status pull and reports per-customer readiness for cold reference call
+  - skill runs Reference Call Simulation and flags 3 of 5 references as not-ready (2 champion changes, 1 paused); names the 1 clean reference and the 1 renewal-pressure reference explicitly
+  - skill forces Split-Room Story Coherence Test over CEO objection and reports divergence on each of the 5 claim classes
+  - skill rejects "the trajectory is what matters" framing and re-anchors Why-This-Price claim against comparable-set pull; reports defensible multiple at 6-7x → $250-290M post, not $400M
+  - composite Narrative Integrity Score reports low confidence on Why-Us and Why-This-Trajectory (≤2/5) with named evidence; does not produce a flattering scorecard from sanitized inputs
+  - vulnerability-assessment names reference customer regrooming (replace 2 not-ready references, deepen 3 active ones) as a 60-90 day remediation, NOT a 30-day fix

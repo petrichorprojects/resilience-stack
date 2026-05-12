@@ -1,0 +1,41 @@
+case_id: investor-story-forensics-refuse-01
+skill: investor-story-forensics
+description: Company is already mid-diligence with a lead investor — term sheet expected in 9 days. CEO asks for an investor story rebuild after partner meeting surfaced gaps. Skill must REFUSE the rebuild (too late; narrative changes mid-diligence read as panic and surface MORE gaps) and route to preserve-narrative-consistency mode, with board-narrative-alignment composable for board-level damage control if needed.
+input:
+  company_name: Synthetic Mid-Diligence Co
+  stage: in_active_diligence_series_c
+  symptom: "First partner meeting last week. Partners pulled cohort retention and asked why NRR claim (128%) doesn't match the trailing number (114%). CEO and CFO panicked, asked the GP for 2 more weeks to come back with sharper materials. GP gave 9 days. CEO wants to use those 9 days to forensically rebuild the narrative, swap reference customers, and re-anchor the Why-This-Price claim."
+  trigger_event: term sheet expected in 9 days; second partnership meeting in 6 days
+  current_situation:
+    days_to_term_sheet: 9
+    days_to_second_partner_meeting: 6
+    diligence_state: cohort retention pulled, reference call scheduled with 2 of 5 named references in next 4 days, financial diligence underway
+    narrative_changes_since_first_partner_meeting: none yet — CEO wants to make them now
+  evidence_available:
+    - current deck (the one shown at first partner meeting)
+    - first partner meeting notes (partners flagged NRR claim and non-auto pilot churn)
+    - reference customer list (already shared with the GP)
+    - the GP has already started reference calls (2 scheduled in next 4 days, 1 already completed)
+expected_behavior:
+  triggers: false
+  refuses: true
+  refusal_reason: "Company is inside active diligence with <14 days to term sheet. Investor-story-forensics is a rebuild protocol — it requires 90+ days of runway to surface gaps, regroom reference customers, re-anchor claims to trailing data, and let the new narrative stabilize before partner meetings. Running a forensic rebuild now would (1) introduce new claims that contradict materials already in the GP's deal room, (2) require reference customer swaps the GP would notice and read as panic, (3) force re-anchoring of the Why-This-Price claim mid-negotiation, which signals weakness on the price. The correct move at <14 days is the opposite — preserve narrative consistency and contain the damage, not rebuild."
+  recommended_alternative: |
+    Preserve-narrative-consistency mode (separate framework, not investor-story-forensics):
+    1. Do NOT change the deck or swap reference customers mid-diligence.
+    2. Prepare honest answers for the 4 most-likely follow-up questions (NRR best-quarter vs trailing, non-auto pilot conversion, OEM count change, comparable-set multiple). Answers acknowledge the gap, anchor to trailing data, explain the trajectory — they do not retract the claim.
+    3. Pre-brief the 5 reference customers individually in next 48 hours — what the GP will likely ask, what Aperture's honest answer is, what the customer's honest answer is. Do not coach; align on honesty.
+    4. If GP surfaces a gap in the second partner meeting, acknowledge it cleanly, anchor to the trailing number, and pivot to the trajectory story — do not deflect or re-frame.
+    5. If the deck is not survivable at the trailing numbers, the right move is to slow the round (ask for 30 more days, do the forensic rebuild properly) not to rebuild in 9 days.
+
+    For board-level damage control (board has been told 128% NRR), compose with `board-narrative-alignment` to prepare an honest board update and reset expectations before the next board meeting, independently of the GP conversation.
+
+    Revisit investor-story-forensics 90+ days before the NEXT raise, or after this round closes/breaks if the company needs to rebuild before going back out.
+pass_criteria:
+  - skill recognizes the timing constraint (<14 days to term sheet, second partner meeting in 6 days, references already scheduled) in pre-work and stops before Phase 2 starts
+  - skill explicitly cites the "Already in due diligence (<14 days to term sheet) — too late; preserve narrative consistency, don't rebuild" entry from its When NOT to Use section
+  - skill does not attempt the Bear Case Pre-Mortem, Split-Room Story Coherence Test, or Reference Arc Audit-with-regrooming inside diligence
+  - skill recommends preserve-narrative-consistency mode and names the 5 specific moves (no deck changes, prepare honest follow-ups, pre-brief references on honesty, acknowledge gaps cleanly in partner meeting, slow the round if not survivable)
+  - skill names board-narrative-alignment as the composable framework for board-level damage control, independently of the GP conversation
+  - skill does NOT produce a narrative-due-diligence-report, claim-evidence-matrix, vulnerability-assessment, investor-faq-preparation, or investor-story-scorecard inside the 9-day window
+  - skill names the revisit condition (90+ days before next raise, or after this round closes/breaks)

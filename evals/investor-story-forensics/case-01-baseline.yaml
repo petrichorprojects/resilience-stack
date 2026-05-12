@@ -1,0 +1,81 @@
+case_id: investor-story-forensics-baseline-01
+skill: investor-story-forensics
+description: Vertical SaaS for industrial QA / manufacturing inspection, $42M ARR, Series B-funded, 10-12 months from Series C kickoff. CEO wants the narrative forensically audited now while there is runway to rebuild. Five narrative claims in the current deck; trailing data shows widening gaps on Why-Us (NRR 117% trailing vs 130% claimed, 11 of 25 OEM actual vs 14 claimed), Why-This-Trajectory (+68% trailing vs +95% claimed, 38% pilot churn in non-automotive), reference customer arc (2 of 5 champions gone, 1 in renewal, 1 paused). Standard positive case.
+input:
+  company_name: Aperture (synthetic)
+  stage: series_b_42M_ARR
+  symptom: "narrative-reality gap widening across 5 claim classes; trailing NRR is 117% (deck claims 130%, which was Q3 2025 single best-quarter); 11 of 25 top global automotive OEMs active today (deck claims 14, verbatim from Q2 2025 — 3 have churned or paused since); Y/Y growth +68% trailing (deck claims +95%, which was the projection); non-automotive vertical expansion is 6% of revenue with 38% pilot churn; 5 reference customers in deck — 2 champion changes, 1 in renewal negotiation, 1 paused, only 1 clean reference"
+  trigger_event: Series C kickoff in 10-12 months; CEO has seen two competitors cratered in diligence when partners pulled cohort retention and called references that contradicted the deck
+  current_narrative_claims:
+    why_we_win: "We're the only platform built by manufacturing operators, for manufacturing operators."
+    why_now: "AI-native inspection is the inevitable next layer of factory operations."
+    why_us: "Founder-led, $42M ARR, 130% NRR, 14 of 25 top global automotive OEMs as customers."
+    why_this_trajectory: "+95% Y/Y growth, expanding to non-automotive verticals (aerospace, pharma, semiconductor)."
+    why_this_price: "Series C at $400M post (10x ARR multiple), w/ growth-stage exit story → $1.5B in 36 months."
+  reality_per_claim:
+    why_we_win: { status: defensible, evidence: "4 of 5 founders are ex-manufacturing operators (Toyota, GE, Caterpillar); reference-confirmable" }
+    why_now: { status: defensible_with_framing_risk, evidence: "'AI-native' framing adopted Q4 2025; pre-2025 deck said 'data-driven inspection' — diligence will pull old decks and ask why framing changed" }
+    why_us: { status: partially_false, evidence: "NRR 117% trailing vs 130% claimed (130% was Q3 2025 single best-quarter cited as trailing); 11 of 25 OEMs active vs 14 claimed (14 was Q2 2025 snapshot, 3 churned or paused since)" }
+    why_this_trajectory: { status: vulnerable, evidence: "+68% trailing vs +95% claimed (95% was projection, not actual); non-automotive 6% of revenue, mostly pilots, 38% pilot churn" }
+    why_this_price: { status: fragile, evidence: "10x ARR multiple defensible at 130% NRR + 95% growth; at 117% + 68% the comparable-set drops to 6-7x → $250-290M post" }
+  reference_customer_status:
+    auto_oem_a: { tier: top-5_global, status: champion_left_q4_2025, risk: "new VP from Tier-1 supplier w/ competing internal tool; not endorsed Aperture publicly" }
+    auto_oem_b: { tier: top-10_global, status: in_renewal_negotiation, risk: "pushing for 18% price reduction or move to per-station usage; reference call surfaces pricing pressure" }
+    auto_oem_c: { tier: top-15_global, status: paused_q1_2026, risk: "auto OEM strategy shift away from in-house inspection software; reference call would not confirm active relationship" }
+    tier1_supplier_d: { status: clean_reference, risk: "none — expanded twice in 2025, CFO and VP Quality both willing to take calls" }
+    auto_oem_e: { tier: top-25_global, status: champion_change_q1_2026, risk: "Head of Inspection retired; successor not yet briefed on Aperture relationship" }
+  internal_forecast_vs_actuals:
+    q1_2025_to_q1_2026_growth: { deck_claim_pct: 95, trailing_actual_pct: 68 }
+    nrr_trailing_12mo: 117
+    nrr_q3_2025_best_quarter: 130
+    nrr_by_cohort: { auto_oem: 124, non_auto_pilot: 78 }
+  pilot_data_non_automotive:
+    share_of_revenue_pct: 6
+    pilot_to_annual_conversion_pct: 62
+    pilot_churn_pct: 38
+    structural_reasons_for_non_conversion:
+      - aerospace certification chain not built
+      - pharma 21 CFR Part 11 audit trail not built
+      - semiconductor sub-micron tolerance not yet supported
+  evidence_available:
+    - current investor deck (10-12 month draft for Series C)
+    - last 4 board decks (Q2 2025 → Q1 2026)
+    - last 4 quarters financials with cohort retention sliced by initial vertical
+    - customer list w/ status (active / paused / churned), updated Q1 2026
+    - 5 reference customer relationship status one-pagers (champion / renewal / exec change)
+    - Q3 2025 + Q1 2026 internal forecast vs actuals
+    - 6 quarters pilot conversion data for non-automotive verticals
+    - comparable-set valuation pull (10 vertical SaaS Series C rounds 2024-2025, 5-12x ARR by NRR + growth pair)
+expected_behavior:
+  triggers: true
+  refuses: false
+  produces:
+    - narrative-due-diligence-report
+    - claim-evidence-matrix
+    - vulnerability-assessment
+    - investor-faq-preparation
+    - investor-story-scorecard
+  duration_estimate_hours: 2.5
+adversarial_checks:
+  - facilitator must cross-examine each of the 5 claim classes (Why-We-Win, Why-Now, Why-Us, Why-This-Trajectory, Why-This-Price) individually; cannot collapse them or score globally without per-claim Evidence / Coherence / Reference Arc verdicts
+  - facilitator must demand evidence per claim — any claim made by CEO or Head of Sales not anchored in cohort retention, customer status data, or reference customer interview is labeled INSUFFICIENT EVIDENCE in the deliverable
+  - facilitator must recode the Why-Us claim against trailing data — NRR 130% claim must be flagged as best-quarter-cited-as-trailing (117% trailing is the defensible number); 14 of 25 OEM claim must be flagged as Q2 2025 snapshot (11 of 25 is the current number); recoding cannot be deferred
+  - facilitator must run the Reference Arc Audit on all 5 named reference customers and report the relationship status per customer (champion present / champion left / renewal in progress / paused / churned); cannot accept "they're a customer" as sufficient
+  - facilitator must run the Reference Call Simulation — what would each of the 5 references say without coaching? Score each as confirming / hedging / contradicting the deck; flag the 2 champion-change customers and the 1 paused customer as not-ready
+  - facilitator must run the Bear Case Pre-Mortem and write the most credible short thesis a sophisticated investor would write (concentration risk in auto OEM, non-auto pilot churn, NRR best-quarter-vs-trailing gap, comparable-set multiple at actual numbers)
+  - facilitator must run the Split-Room Story Coherence Test — split the leadership team in half, each tells the story independently, measure divergence on the 5 claim classes; divergence on any claim is a signal the company has not aligned on the story
+  - facilitator must produce a composite Narrative Integrity Score across the 5 claim classes (each scored 1-5 on Evidence × Coherence × Reference Arc) with named evidence; before-and-after remediation expected
+  - facilitator must price-test the Why-This-Price claim against the comparable-set pull (5-12x ARR at NRR+growth pair) — if Aperture's defensible numbers (117% NRR + 68% growth) put it at 6-7x, the $400M post claim must be flagged and re-anchored
+  - facilitator must reject "the team is bullish on the projection" or "the deck is a forward-looking document" as a defense for citing best-quarter or projection numbers as trailing; demand the deck be re-anchored to trailing data with the projection separately labeled
+pass_criteria:
+  - all 5 deliverables produced and written to ./investor-forensics-output/
+  - per-claim verdicts produced for Why-We-Win, Why-Now, Why-Us, Why-This-Trajectory, Why-This-Price — none collapsed
+  - Why-Us claim explicitly flagged with NRR 130% vs 117% trailing gap AND 14 of 25 vs 11 of 25 OEM gap, both with named evidence (Q3 2025 best-quarter board deck, Q2 2025 customer list snapshot)
+  - Why-This-Trajectory claim explicitly flagged with +95% projection vs +68% trailing gap AND 38% pilot churn in non-automotive, anchored in 6 quarters of pilot conversion data
+  - Reference Arc Audit reports per-customer status for all 5 named references; flags Auto OEM A (champion left), Auto OEM B (renewal pricing pressure), Auto OEM C (paused), Auto OEM E (champion change) as not-ready
+  - Bear Case Pre-Mortem produces at least 4 named short theses (concentration in auto OEM, non-auto pilot churn, NRR best-quarter-vs-trailing gap, valuation multiple at actual numbers)
+  - Split-Room Story Coherence Test run and divergence reported per claim class
+  - Why-This-Price claim re-anchored to comparable-set pull — 6-7x at defensible numbers → $250-290M post explicitly named as the honest anchor
+  - composite Narrative Integrity Score reported across 5 claim classes (each 1-5 on Evidence × Coherence × Reference Arc) with named evidence; Why-Us and Why-This-Trajectory expected to score ≤2/5 pre-remediation
+  - investor-faq-preparation includes prepared answers for the 4 highest-risk diligence questions (NRR best-quarter vs trailing, OEM count change Q2 2025 → Q1 2026, non-auto pilot conversion, reference customer current status)
+  - vulnerability-assessment names the reference customer regrooming as a 30-60 day remediation (replace 2 not-ready references, deepen 3 active ones) before first partner meeting
