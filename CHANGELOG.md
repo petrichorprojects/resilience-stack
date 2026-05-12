@@ -4,6 +4,36 @@ All notable changes documented per [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## [1.5.0] — 2026-06-16 (Week 5 — HN Launch Week)
+
+### Added — Kit 5: investor-story-forensics (full depth) + HN launch
+- `evals/investor-story-forensics/`: 3 cases (Aperture baseline, refuse <14d to term sheet, adversarial sanitized)
+- `examples/investor-story-forensics/`: input + trajectory + 5 deliverables + post-engagement + board-brief sample
+- `case-studies/investor-story-forensics/case-01-industrial-qa-saas.md` (998w)
+- `skills/investor/investor-story-forensics/scoring/investor-rubric.md` — Aperture 14/30 Vulnerable
+- `skills/investor/investor-story-forensics/formatters/board-brief.md`
+- `marketing/essays/investor-story-forensics.md` (2319w)
+- `marketing/quizzes/investor-story-forensics.md` — 5-Q, 4 tiers
+- `marketing/videos/investor-story-forensics.md`
+- `marketing/launch-templates/investor-story-forensics.md`
+- `marketing/launch-templates/_v1.5-launch-week-5-hn.md` — Show HN post + cumulative recap thread + babysit plan
+
+### v1.5 Final Cumulative
+- 5 priority kits shipped (relevancy-audit, revenue-story-audit, competitive-narrative-stress-test, pricing-authority-diagnostic, investor-story-forensics)
+- 50+ artifacts: 15 eval cases + 35 worked example files + 5 case studies + 5 scoring rubrics + 5 board-brief formatters + 5 board-brief samples + 5 essays + 5 quiz specs + 5 video shot lists + 5 launch templates
+- 1 manifesto, 1 trajectory-logging spec, 1 skill-creator meta-skill, 1 marketing scaffold, 1 glossary
+- Schedule: Soft release Week 0 → 5 weekly kit drops → HN Show HN Week 5 Tuesday 9am ET
+
+### Pending Phil for full launch
+- 5 Tally quiz URLs + Beehiiv list config
+- 5 Loom video recordings
+- Outside-Petrichor review (2 strategists per essay)
+- GitHub org `petrichor-projects` setup + npm `resilience-stack` publish
+- Weekly Monday posts (LinkedIn, X, Substack) Weeks 1-5
+- HN submission Tuesday 9am ET Week 5
+
+---
+
 ## [1.5.0-kit-4] — 2026-06-09 (Week 4)
 
 ### Added — Kit 4: pricing-authority-diagnostic (full depth)

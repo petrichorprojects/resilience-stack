@@ -34,7 +34,7 @@ These skills ship with the full Resilience Stack toolkit: 3 eval cases, worked e
 | 2 | [⭐ revenue-story-audit](skills/growth/revenue-story-audit) | Week 2 (2026-05-26) | [marketing](marketing/quizzes/revenue-story-audit.md) | [shot list](marketing/videos/revenue-story-audit.md) | [essay](marketing/essays/revenue-story-audit.md) |
 | 3 | [⭐ competitive-narrative-stress-test](skills/positioning/competitive-narrative-stress-test) | Week 3 (2026-06-02) | [marketing](marketing/quizzes/competitive-narrative-stress-test.md) | [shot list](marketing/videos/competitive-narrative-stress-test.md) | [essay](marketing/essays/competitive-narrative-stress-test.md) |
 | 4 | [⭐ pricing-authority-diagnostic](skills/growth/pricing-authority-diagnostic) | Week 4 (2026-06-09) | [marketing](marketing/quizzes/pricing-authority-diagnostic.md) | [shot list](marketing/videos/pricing-authority-diagnostic.md) | [essay](marketing/essays/pricing-authority-diagnostic.md) |
-| 5 | investor-story-forensics | Week 5 (pending) | — | — | — |
+| 5 | [⭐ investor-story-forensics](skills/investor/investor-story-forensics) | Week 5 (2026-06-16) + HN | [marketing](marketing/quizzes/investor-story-forensics.md) | [shot list](marketing/videos/investor-story-forensics.md) | [essay](marketing/essays/investor-story-forensics.md) |
 
 [Read the manifesto](docs/manifesto.md) · [v1.5 roadmap](ROADMAP.md) · [CHANGELOG](CHANGELOG.md)
 

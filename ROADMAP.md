@@ -1,30 +1,39 @@
 # Roadmap — Resilience Stack
 
-## Now (v1.2 — May 2026)
+## Shipped — v1.5 (May-June 2026)
 
-- 18 skills, structured frontmatter, evals + examples + case-studies
-- Meta-skill `skill-compass` for selection
-- CC BY 4.0 license
-- Open contributions w/ tight `CONTRIBUTING.md`
+✅ **18 skills** at v1.2 structured-frontmatter baseline + "When NOT to use" blocks
+✅ **5 priority kits at full depth** (10 artifacts each):
+  - relevancy-audit (Week 1)
+  - revenue-story-audit (Week 2)
+  - competitive-narrative-stress-test (Week 3)
+  - pricing-authority-diagnostic (Week 4)
+  - investor-story-forensics (Week 5)
+✅ **Foundational artifacts**: manifesto, glossary, trajectory-logging spec, skill-creator meta-skill, skill-compass meta-skill
+✅ **Marketing scaffold**: 5 weekly launch templates + 5 quiz specs + 5 Loom shot lists + 5 founder essays + 5 cross-platform copy bundles
+✅ **HN Show HN launch** Week 5 Tuesday 9am ET
+✅ **CC BY 4.0** license, open contributions w/ tight `CONTRIBUTING.md`
 
-## Next (v1.5 — 60 days)
+## Now (v1.6 — post-launch signal-dependent)
 
-### Skill expansions (target: 18 → 46 skills)
-- 18 scoring rubric skills (one per workshop)
-- 5 deliverable-formatter skills (board-deck-ready outputs)
-- 5 meta-skills: prep-pack, debrief, retro, follow-up planner, integration map
+### Quality fill (high-leverage)
+- Long-tail 13 skills: scoring rubric + worked example + case study per skill
+- 3 eval cases per long-tail skill (target: 18/18 with 3 cases each)
+- Per-skill industry variants (SaaS / DTC / B2B services) for top 3 inbound-driving skills
 
-### Tooling
-- Python eval runner: `python evals/run.py <skill> <case>` (calls Claude API, scores against golden)
+### Tooling (Phil's choice based on launch signal)
+- Python eval runner: `python evals/run.py <skill> <case>` (Claude API, golden-output comparison)
 - CLI: `resilience-stack run <skill> --context "..."` (local-only, user's own API key)
 - VS Code extension for skill authoring (frontmatter validator + section linter)
 
-### Quality
-- 3 eval cases per skill (currently 1 has 3, 17 have 0)
-- Worked example per skill (currently 1 of 18 complete)
-- 1 case study per skill per quarter (currently 1 of 18 complete)
+### Distribution expansions
+- MyClaude marketplace mirror (Petrichor authority signal)
+- LangChain tool wrapper (skills as LangChain tools)
+- MCP server wrapping the stack
 
-## Later (v2.0 — 120 days)
+## Next (v2.0 — 120 days post-launch)
+
+## Later (v2.0 — 120 days POST-LAUNCH-SIGNAL)
 
 ### SkillOS-style Curator (the thesis upgrade)
 - `curator` agent that reads skill-run trajectories from `<skill>-output/` dirs
