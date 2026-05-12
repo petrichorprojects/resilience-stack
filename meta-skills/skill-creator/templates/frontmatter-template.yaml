@@ -1,0 +1,82 @@
+# =============================================================================
+# Resilience Stack — Skill Frontmatter Template
+# =============================================================================
+#
+# BM25 DESCRIPTION HEURISTIC (read before writing the `description:` line):
+# -----------------------------------------------------------------------------
+# Write ONE sentence, max 50 words, that names:
+#   (1) what the diagnostic produces (the output / artifact),
+#   (2) WHEN a buyer would search for it (the trigger condition),
+#   (3) 2-3 keywords the buyer would actually type into search.
+#
+# The retrieval layer uses BM25 over this field. Vague descriptions lose to
+# specific ones. Test by reading aloud: would a stranger searching for this
+# exact problem hit your skill? If not, rewrite.
+#
+# Good:  "Apply competitive, market, and narrative pressure to current
+#         positioning, surface fault lines across 4 attack vectors, and produce
+#         a Positioning Durability Score with defense architecture. Use when
+#         entering a new competitive cycle, planning a raise, or anticipating
+#         a market shift."
+#
+# Bad:   "Helps you think about your positioning strategy in a structured way."
+#         (no keywords, no trigger, no output)
+#
+# =============================================================================
+
+# REQUIRED. kebab-case, 3-5 words, verb-led when possible.
+# Examples: positioning-under-pressure, tam-lie-detector, pricing-authority-diagnostic
+name: {{skill-name-kebab-case}}
+
+# REQUIRED. See BM25 heuristic above. One sentence, under 50 words.
+description: {{one-sentence-what-and-when-with-2-3-buyer-keywords}}
+
+# REQUIRED. Always 1.0.0 for new skills. Bump on contract-breaking changes only.
+version: 1.0.0
+
+# REQUIRED. One of the canonical tracks:
+#   positioning | brand | growth | market-definition | intelligence
+#   | investor | diagnostic | meta
+# `meta` is reserved for skills that operate on the stack itself (skill-compass,
+# skill-creator). Don't invent new tracks without maintainer sign-off.
+track: {{track-name}}
+
+# REQUIRED. Tier indicates depth and prerequisite weight:
+#   tier 0 — meta / entry-point skills (no domain prereqs)
+#   tier 1 — foundational diagnostics (entry into a track)
+#   tier 2 — advanced diagnostics (require a tier-1 prerequisite)
+#   tier 3 — specialist / late-stage diagnostics (multi-prereq, ≥1 tier-2)
+tier: {{1-or-2-or-3}}
+
+# REQUIRED. Decimal hours for a single facilitated session.
+# Hard cap: 4.0. Skills longer than 4h must split into prerequisite + main.
+duration_hours: {{decimal-eg-2.5}}
+
+# REQUIRED. List of skill `name:` values that must run first.
+# Empty list [] is valid. Use a YAML list if non-empty.
+prerequisites: []
+
+# REQUIRED. Skills that pair well in the same engagement (run before/after/parallel).
+# Empty list [] is valid. Used by skill-compass for cascade recommendations.
+composable_with: []
+
+# REQUIRED. Exactly 5 named structured artifacts, kebab-case.
+# Each must correspond to a deliverable in Phase 3 of the skill markdown.
+# These are validated by .github/workflows/validate-skill.yml.
+outputs:
+  - {{deliverable-1-kebab-case}}
+  - {{deliverable-2-kebab-case}}
+  - {{deliverable-3-kebab-case}}
+  - {{deliverable-4-kebab-case}}
+  - {{deliverable-5-kebab-case}}
+
+# REQUIRED. Always CC-BY-4.0 for the public Resilience Stack.
+# If you cannot license under CC-BY-4.0, do not submit — open an issue first.
+license: CC-BY-4.0
+
+# REQUIRED. Full contributor name or organization. This is the public credit line.
+author: {{Contributor-Full-Name-or-Organization}}
+
+# REQUIRED. A public URL where the framework, contributor, or origin can be
+# verified. Personal site, firm site, or LinkedIn. No private docs, no localhost.
+source_url: {{public-URL}}
