@@ -1,6 +1,24 @@
 ---
 name: brand-as-memory-system
-description: Run a Petrichor Brand as Memory System workshop — diagnose how your brand actually lives in buyer minds via Category Entry Points, Distinctiveness Assets, association networks, and retrieval contexts. Produces Brand Memory Architecture blueprint. Based on Brand Memory Architecture (Romaniuk/Sharp lineage).
+description: Map how your brand actually lives in buyer minds via Category Entry Points, Distinctiveness Assets, association networks, and retrieval contexts. Use when CMOs report declining unaided recall, when launching a new category entry, or when refreshing brand investment allocation.
+version: 1.0.0
+track: brand
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- false-familiarity
+- brand-permission-boundaries
+- legacy-brand-relevance-reset
+outputs:
+- brand-memory-map
+- association-inventory
+- memory-trigger-assessment
+- competitive-memory-analysis
+- brand-memory-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Brand as Memory System — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Brand as Memory System
 **Core question**: "How does your brand actually live in people's minds — and is that working for or against you?"
 
 **Framework — The Brand Memory Architecture**: Maps 5 retrievability components — Category Entry Points (CEPs: buying-moment triggers), Distinctiveness Assets (visual/verbal codes that fire fast), Association Network (the cluster of meanings attached), Memory Decay (which associations are losing strength), Retrieval Context (when/where the brand actually surfaces unprompted).
+
+
+## When NOT to use
+
+- Cannot run external surveys (15-25 customers + 15-25 prospects + 10 lapsed) — skill is external-data-required.
+- Pre-PMF — no consistent brand impression yet to memorize.
+- Recent major rebrand (<6 months) — memory hasn't formed against new identity yet.
+- Single-buyer or single-account business — memory architecture is a mass-market construct.
 
 ---
 

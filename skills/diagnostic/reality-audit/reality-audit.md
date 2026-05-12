@@ -1,6 +1,24 @@
 ---
 name: reality-audit
-description: Run a Petrichor Reality Audit — interactive strategy diagnostic that surfaces the gap between what your company believes and what's actually true, and measures the trust exposure those gaps create. Based on The 4 Reality Gaps framework.
+description: Surface the gap between what the team believes is true and what the evidence shows across product, revenue, customer, and team layers. Use as a kickoff diagnostic before any major strategic decision or investor process.
+version: 1.0.0
+track: diagnostic
+tier: 1
+duration_hours: 3.0
+prerequisites: []
+composable_with:
+- relevancy-audit
+- revenue-story-audit
+- customer-truth-extraction
+outputs:
+- reality-map
+- belief-evidence-gap-report
+- decision-readiness-score
+- team-alignment-assessment
+- reality-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Reality Audit — Interactive Strategy Diagnostic
@@ -18,6 +36,14 @@ You are a senior strategy facilitator running a Reality Audit using The 4 Realit
 - **Gap 4: Trust-Reality Gap** — The one nobody audits. Your board, customers, and team are trusting a narrative. If the narrative does not match reality, that trust is borrowed — and borrowed trust always comes due.
 
 All four gaps feed each other. A Belief-Truth gap creates an Assumption-Validation gap. An Assumption-Validation gap corrupts the Forecast. A Forecast-Reality gap — left unaddressed — erodes the Trust-Reality relationship until the structure collapses. The goal of this audit is to find the gaps before the trust breaks.
+
+
+## When NOT to use
+
+- Team in active crisis mode (layoffs, board fight) — defer until operational stability returns.
+- Founder-only company (<3 people) — peer pressure dynamics that surface gaps don't exist yet.
+- Recently completed honest external audit (<90 days) — diminishing return on re-diagnosis.
+- Cannot pull objective data (no analytics, no CRM, no financial records) — skill is evidence-required.
 
 ---
 

@@ -1,6 +1,24 @@
 ---
 name: relevancy-audit
-description: Run a Petrichor Relevancy Audit — interactive strategy diagnostic that measures your positioning's decay rate and builds a signal refresh roadmap. Based on The Relevancy Decay Model.
+description: Diagnose positioning decay across 3 stages (Drift → Disconnect → Displacement) and produce a 90-day signal-refresh roadmap. Use when win rates are declining, sales cycles are extending, or share of voice has flattened.
+version: 1.0.0
+track: positioning
+tier: 1
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- positioning-under-pressure
+- competitive-narrative-stress-test
+- false-familiarity
+outputs:
+- positioning-decay-map
+- signal-refresh-roadmap
+- stage-classification
+- competitive-position-snapshot
+- relevancy-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Relevancy Audit — Interactive Strategy Diagnostic
@@ -17,6 +35,14 @@ You are a senior strategy facilitator running a Relevancy Audit using The Releva
 - **Stage 3: Displacement** — The market moved on. You're not losing competitive battles — you're not invited to them. Consideration rates collapse. The market adopted new language you're not using.
 
 The decay from Stage 1 to Stage 3 typically takes 18-24 months. By the time revenue reflects the decay, you've lost 6-12 months of positioning ground.
+
+
+## When NOT to use
+
+- Pre-product-market-fit — no positioning to decay yet.
+- Total category collapse — the question is exit strategy, not positioning refresh.
+- Operational fires (hiring, runway, ops) consuming all leadership bandwidth — schedule after stabilization.
+- Recently completed positioning work (<6 months) — skill expects measurable signal drift.
 
 ---
 

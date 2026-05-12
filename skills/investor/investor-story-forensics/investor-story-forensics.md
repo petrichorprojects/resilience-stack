@@ -1,6 +1,25 @@
 ---
 name: investor-story-forensics
-description: Run a Petrichor Investor Story Forensics workshop — forensic cross-examination of the investor narrative. Includes Why You Win interrogation, Trajectory Shape Alignment, Investor Archetype Calibrator, Bear Case Pre-Mortem, Reference Arc Audit. Based on The Narrative Due Diligence Protocol.
+description: Forensic cross-examination of the investor narrative across 5 claim classes (Why-We-Win, Why-Now, Why-Us, Why-This-Trajectory, Why-This-Price). Use 90+ days before a fundraise, after a failed raise, or before any partner meeting where diligence is expected.
+version: 1.0.0
+track: investor
+tier: 3
+duration_hours: 2.5
+prerequisites:
+- revenue-story-audit
+composable_with:
+- competitive-narrative-stress-test
+- tam-lie-detector
+- board-narrative-alignment
+outputs:
+- narrative-due-diligence-report
+- claim-evidence-matrix
+- vulnerability-assessment
+- investor-faq-preparation
+- investor-story-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Investor Story Forensics — Interactive Strategy Diagnostic
@@ -12,6 +31,14 @@ You are a senior strategy facilitator running Petrichor's Investor Story Forensi
 **Core question**: "Does your investor narrative survive forensic examination — or does it crack under diligence?"
 
 **Framework — The Narrative Due Diligence Protocol**: Cross-examines 5 claim classes — Why-We-Win, Why-Now, Why-Us, Why-This-Trajectory, Why-This-Price. Each scored against three diligence vectors: Evidence (do you have it?), Coherence (does it match the rest of the story?), Reference Arc (will references confirm it?). Composite Narrative Integrity Score.
+
+
+## When NOT to use
+
+- Already in due diligence (<14 days to term sheet) — too late; preserve narrative consistency, don't rebuild.
+- Cannot list 5 reference customers who will pick up a diligence call.
+- Pre-product company raising on team alone — `bear case pre-mortem` framing doesn't yet apply.
+- Insider round with existing investors who already know the story — diminishing return.
 
 ---
 

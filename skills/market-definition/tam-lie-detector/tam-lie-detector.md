@@ -1,6 +1,24 @@
 ---
 name: tam-lie-detector
-description: Run a Petrichor TAM Lie Detector — interactive strategy diagnostic that pressure-tests your addressable market claim across 8 integrity dimensions and produces a validated TAM your team can defend in diligence. Based on The TAM Integrity Test.
+description: Stress test TAM/SAM/SOM claims for inflation, double-counting, and adoption-curve hand-waves, producing a defensible market size with explicit assumptions. Use before any raise, before a board-level strategy reset, or before signing a partnership predicated on market projections.
+version: 1.0.0
+track: market-definition
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- category-creation-pressure-test
+- revenue-story-audit
+- investor-story-forensics
+outputs:
+- tam-decomposition
+- assumption-stress-test-results
+- comparable-set-validation
+- defensible-tam-statement
+- tam-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # TAM Lie Detector — Interactive Strategy Diagnostic
@@ -24,6 +42,14 @@ You are a senior strategy facilitator running a TAM Lie Detector using The TAM I
 The TAM Integrity Score combines all 8 dimensions into a 0-80 composite. Below 40 — the number is a fiction. 40-64 — significant recalibration required. 65-80 — defensible, minor adjustment needed.
 
 Every company has three TAM numbers. The Investor TAM (the slide). The Operational TAM (implied by the sales plan). The Validated TAM (built from data). Two of those numbers are wrong. The goal of this diagnostic is to produce the third one.
+
+
+## When NOT to use
+
+- Pre-product TAM exercises with no comparable buyer data — `category-creation-pressure-test` is the better tool.
+- Regulatory-defined market (e.g., a specific FDA-approved indication) — TAM is exogenous, not negotiable.
+- Board has already accepted the TAM — re-litigating without a triggering event burns trust.
+- Cannot access bottom-up customer data to validate top-down claims.
 
 ---
 

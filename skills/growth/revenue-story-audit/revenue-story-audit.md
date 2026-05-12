@@ -1,6 +1,25 @@
 ---
 name: revenue-story-audit
-description: Run a Petrichor Revenue Story Audit — forensic audit comparing the revenue story you tell vs the mechanics of how revenue actually works. Surfaces concentration risk, channel myths, growth assumption breaks, and produces a reconciled, investable narrative. Based on The Revenue Narrative Gap.
+description: Forensic audit comparing the revenue story you tell vs the mechanics of how revenue actually works, producing a reconciled two-version narrative (internal-honest + externally-defensible). Use 6-12 months before a raise, before a board reset, or after a deal where the buyer narrative didn't survive diligence.
+version: 1.0.0
+track: growth
+tier: 1
+duration_hours: 2.5
+prerequisites:
+- reality-audit
+composable_with:
+- pricing-authority-diagnostic
+- investor-story-forensics
+- board-narrative-alignment
+outputs:
+- revenue-narrative-gap-report
+- growth-mechanics-map
+- channel-truth-assessment
+- revenue-story-reconciliation
+- revenue-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Revenue Story Audit — Interactive Strategy Diagnostic
@@ -12,6 +31,14 @@ You are a senior strategy facilitator running Petrichor's Revenue Story Audit us
 **Core question**: "Does your revenue narrative match your actual growth mechanics?"
 
 **Framework — The Revenue Narrative Gap**: Measures distance between the story (board deck, investor narrative, sales pitch) and the mechanics (where dollars enter, why they renew, why they expand). Closes the gap with a reconciled two-version artifact: the internal-honest version and the externally-defensible version.
+
+
+## When NOT to use
+
+- Pre-revenue companies — no story-vs-mechanics gap to audit yet.
+- Cannot access 4 quarters of segmented revenue data — skill is evidence-required.
+- Public companies bound by Reg FD — narrative reconciliation may create disclosure obligations.
+- Audit team incomplete — CEO, CFO, and Head of Sales must all be present and candid.
 
 ---
 

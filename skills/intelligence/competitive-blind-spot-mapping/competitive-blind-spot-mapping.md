@@ -1,6 +1,24 @@
 ---
 name: competitive-blind-spot-mapping
-description: Run a Petrichor Competitive Blind Spot Mapping workshop — surface what competitors see about you that you don't see about them. Includes War Room simulation, Asymmetry Audit, Win/Loss Archaeology, Perception Gap survey, and 90-day counter-move plan. Based on The Blind Spot Taxonomy.
+description: Surface what competitors see about you that you don't see about them, via War Room simulation, Asymmetry Audit, Win/Loss Archaeology, and Perception Gap survey. Use after losing 3+ consecutive deals to the same competitor, before a major pricing move, or quarterly as a competitive hygiene check.
+version: 1.0.0
+track: intelligence
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- positioning-under-pressure
+- signal-vs-noise-audit
+- competitive-narrative-stress-test
+outputs:
+- blind-spot-map
+- competitive-intelligence-gap-assessment
+- win-loss-root-cause-analysis
+- competitor-strategy-inference
+- competitive-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Competitive Blind Spot Mapping — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Competitive Blind Spot
 **Core question**: "What don't you see about your competitors that they see about you?"
 
 **Framework — The Blind Spot Taxonomy**: 4 blind-spot classes — Information Blind Spots (data you don't have), Inference Blind Spots (signals you have but misread), Asymmetry Blind Spots (capabilities they have that you lack), Substitute Blind Spots (alternatives you don't track). Composite Competitive Intelligence Health Score.
+
+
+## When NOT to use
+
+- First-mover with no real competitors — `category-creation-pressure-test` instead.
+- Cannot conduct 20 win/loss interviews — skill is evidence-required.
+- Just completed a competitive teardown (<60 days) — diminishing return.
+- Sales leadership unwilling to provide candid loss reasons — skill will produce a flattering fiction.
 
 ---
 

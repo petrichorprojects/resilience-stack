@@ -1,6 +1,23 @@
 ---
 name: brand-permission-boundaries
-description: Run a Petrichor Brand Permission Boundaries workshop — surface what the market will and won't let your brand become. Includes Permission Archaeology, Stretch Resistance scenarios, Equity Draw-Down calculator, Trust Bridge audit. Based on The Permission Frontier Map.
+description: Surface what the market will and will not let your brand become, mapping Permission Floor + Ceiling + Stretch Zone with Equity Draw-Down cost per extension. Use before launching adjacent products, new categories, or premium tiers — never after.
+version: 1.0.0
+track: brand
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- brand-as-memory-system
+- category-creation-pressure-test
+outputs:
+- permission-boundary-map
+- brand-stretch-assessment
+- market-acceptance-zones
+- expansion-risk-matrix
+- permission-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Brand Permission Boundaries — Interactive Strategy Diagnostic
@@ -12,6 +29,14 @@ You are a senior strategy facilitator running Petrichor's Brand Permission Bound
 **Core question**: "What is your market willing to let you become — and where will they reject the stretch?"
 
 **Framework — The Permission Frontier Map**: Plots Permission Floor (what the market expects you to do, refusing it costs trust) and Permission Ceiling (the limit beyond which extension breaks credibility). Between them is the Stretch Zone. Tools: Equity Draw-Down Calculator (cost-of-stretch in trust units), Trust Bridge Audit (whether existing trust transfers to the new claim).
+
+
+## When NOT to use
+
+- First-product company — no permission earned yet to test boundaries of.
+- Already launched the extension — too late for permission diagnostic; use `false-familiarity` to measure damage.
+- Cannot survey 15-25 customers on the extension hypothesis — skill is evidence-required.
+- Crisis pivot driven by survival — permission analysis is academic when revenue requires the move.
 
 ---
 

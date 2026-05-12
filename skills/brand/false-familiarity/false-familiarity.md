@@ -1,6 +1,23 @@
 ---
 name: false-familiarity
-description: Run a Petrichor False Familiarity workshop — expose the trap of buyers recognizing your brand without recalling what it does. Maps 4 trap layers (Recognition Without Recall, Historical Association, Category Confusion, Attention Saturation) plus Trust Migration. Based on The Familiarity Trap Map.
+description: Expose the trap of buyers recognizing your brand without recalling what it does, mapping 4 trap layers plus Trust Migration. Use when brand awareness metrics look healthy but pipeline, consideration, or recall scores have stagnated.
+version: 1.0.0
+track: brand
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- brand-as-memory-system
+- customer-truth-extraction
+outputs:
+- familiarity-trap-diagnostic
+- recognition-vs-recall-gap-report
+- trust-migration-map
+- category-placement-audit
+- familiarity-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # False Familiarity — Interactive Strategy Diagnostic
@@ -17,6 +34,14 @@ You are a senior strategy facilitator running Petrichor's False Familiarity work
 - **Layer 3: Category Confusion** — they place you in the wrong category, so you never enter the consideration set.
 - **Layer 4: Attention Saturation** — they've seen so much of you that signal has flattened into noise.
 - **Trust Migration**: where the trust they once had in you has migrated (competitor, substitute, in-house, do-nothing).
+
+
+## When NOT to use
+
+- Early-stage brand (<24 months) — no familiarity built yet to be false.
+- Niche B2B with <5K total addressable buyers — sample sizes won't support the survey methodology.
+- Brand awareness has never been measured — establish baseline first via simple survey.
+- Currently mid-rebrand — rerun 90 days after launch.
 
 ---
 

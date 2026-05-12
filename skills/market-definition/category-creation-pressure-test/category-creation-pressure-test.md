@@ -1,6 +1,24 @@
 ---
 name: category-creation-pressure-test
-description: Run a Petrichor Category Creation Pressure Test — diagnose whether you are creating a real category or just claiming one that doesn't exist. Tests buyer mental models, analyst readiness, category economics, and produces a viability verdict + narrative architecture or repositioning plan. Based on The Category Viability Matrix.
+description: Diagnose whether you are creating a real category or claiming one that doesn't exist, testing buyer mental models, analyst readiness, category economics, and narrative capacity. Use before raising on a category-creation thesis, before naming a category publicly, or after analyst pushback.
+version: 1.0.0
+track: market-definition
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- tam-lie-detector
+- brand-permission-boundaries
+- competitive-narrative-stress-test
+outputs:
+- category-viability-assessment
+- market-readiness-analysis
+- category-narrative-architecture
+- buyer-category-mental-model-map
+- category-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Category Creation Pressure Test — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Category Creation Pres
 **Core question**: "Are you creating a category, or just claiming one that doesn't exist?"
 
 **Framework — The Category Viability Matrix**: 4 viability dimensions — Buyer Mental Model (do buyers think this is a category?), Analyst Readiness (will analysts cover it?), Category Economics (is the budget line forming?), Narrative Capacity (does the story survive a 3-year arc?). Each scored. Composite verdict: Create / Reposition / Abandon.
+
+
+## When NOT to use
+
+- Selling into a well-defined existing category — `relevancy-audit` or `positioning-under-pressure` are right.
+- Cannot survey 10-15 buyers about category language — skill is buyer-evidence-required.
+- <$5M ARR — usually too early to justify category creation costs.
+- Already named the category publicly and shipped it — `competitive-blind-spot-mapping` to defend it instead.
 
 ---
 

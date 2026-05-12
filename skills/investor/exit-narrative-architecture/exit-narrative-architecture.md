@@ -1,6 +1,25 @@
 ---
 name: exit-narrative-architecture
-description: Run a Petrichor Exit Narrative Architecture workshop — test whether the company story survives acquirer scrutiny. Includes Acquirer Archetype Mapping, Value Driver vs Value Story Gap, Quality of Earnings Pre-Mortem, Management Presentation Crucible, Dataroom Skeleton. Based on The Acquirer's Lens Protocol.
+description: Test whether the company story survives acquirer scrutiny via 6 acquirer-facing dimensions, including Quality of Earnings pre-mortem and Management Presentation Crucible. Use 6-12 months before formal exit process, after an unsolicited inbound, or before hiring a banker.
+version: 1.0.0
+track: investor
+tier: 3
+duration_hours: 3.0
+prerequisites:
+- investor-story-forensics
+- tam-lie-detector
+composable_with:
+- board-narrative-alignment
+- competitive-narrative-stress-test
+outputs:
+- exit-narrative-blueprint
+- acquirer-perception-assessment
+- value-driver-documentation
+- risk-narrative-management-plan
+- exit-readiness-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Exit Narrative Architecture — Interactive Strategy Diagnostic
@@ -12,6 +31,14 @@ You are a senior strategy facilitator running Petrichor's Exit Narrative Archite
 **Core question**: "Does your company story survive the scrutiny of someone deciding whether to buy it?"
 
 **Framework — The Acquirer's Lens Protocol**: Tests narrative across 6 acquirer-facing dimensions — Value Drivers, Why-Now, Risk Surface, Synergy Story, Comparable Set, Counter-Narrative Resilience. Each dimension stress-tested through diligence simulations (QoE pre-mortem, management-presentation crucible, dataroom skeleton).
+
+
+## When NOT to use
+
+- Less than $5M ARR — exit narrative is premature; revenue mechanics still being built.
+- No identified acquirer types yet — `tam-lie-detector` + `category-creation-pressure-test` first.
+- Already in LOI / exclusivity — too late to rebuild; preserve continuity instead.
+- Strategic-only buyer scenario with one logical acquirer — single-buyer dynamic invalidates archetype mapping.
 
 ---
 

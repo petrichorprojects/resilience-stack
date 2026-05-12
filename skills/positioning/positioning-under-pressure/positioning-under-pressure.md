@@ -1,6 +1,24 @@
 ---
 name: positioning-under-pressure
-description: Run a Petrichor Positioning Under Pressure workshop — live stress test that applies competitive, market, and narrative pressure to your positioning, identifies cracks, calculates a Positioning Durability Score, and builds defense architecture. Based on The Pressure Test Protocol.
+description: Apply competitive, market, and narrative pressure to current positioning, surface fault lines across 4 attack vectors, and produce a Positioning Durability Score with defense architecture. Use when entering a new competitive cycle, planning a raise, or anticipating a market shift.
+version: 1.0.0
+track: positioning
+tier: 1
+duration_hours: 2.5
+prerequisites:
+- relevancy-audit
+composable_with:
+- competitive-narrative-stress-test
+- competitive-blind-spot-mapping
+outputs:
+- positioning-stress-test-results
+- competitive-pressure-map
+- position-defense-playbook
+- positioning-fault-line-analysis
+- positioning-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Positioning Under Pressure — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Positioning Under Pres
 **Core question**: "When the market shifts, does your positioning hold or crack?"
 
 **Framework — The Pressure Test Protocol**: A live stress test that applies competitive, market, and narrative pressure to current positioning, surfaces fault lines across 4 attack vectors (competitor displacement, market shift, narrative collapse, internal contradiction), scores Positioning Durability (0-100), and builds the defense architecture to close every gap.
+
+
+## When NOT to use
+
+- Positioning has never been formalized — run `relevancy-audit` first.
+- Pre-revenue companies with no real competitive engagements to stress test.
+- Team lacks emotional resilience to be attacked live — facilitator must read the room.
+- Leadership team incomplete — defense architecture requires the full set of owners present.
 
 ---
 

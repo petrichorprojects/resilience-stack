@@ -1,6 +1,23 @@
 ---
 name: signal-vs-noise-audit
-description: Run a Petrichor Signal vs Noise Audit — diagnose which market signals deserve strategic response and which are distractions. Includes Admiralty Grid scoring, retrospective signal autopsy, response bias map, decision velocity audit. Based on The Signal Integrity Framework.
+description: Diagnose which market signals deserve a strategic response and which are distractions, using the NATO Admiralty Grid (A-F × 1-6) plus Decision Velocity audit. Use when leadership team feels reactive, when 3+ pivots have happened in 12 months, or when a major market event triggered an over-response.
+version: 1.0.0
+track: intelligence
+tier: 3
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- competitive-blind-spot-mapping
+- board-narrative-alignment
+outputs:
+- signal-integrity-report
+- noise-reduction-protocol
+- strategic-signal-dashboard
+- decision-velocity-assessment
+- signal-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Signal vs. Noise Audit — Interactive Strategy Diagnostic
@@ -12,6 +29,14 @@ You are a senior strategy facilitator running Petrichor's Signal vs. Noise Audit
 **Core question**: "Which market signals deserve a strategic response, and which are distractions?"
 
 **Framework — The Signal Integrity Framework**: Adapts the NATO Admiralty Grid to market intelligence. Two axes — Source Reliability (A-F) × Information Credibility (1-6). Adds Response Bias Map (false positive / false negative patterns), Second-Order Signal Test, Decision Velocity Audit (detection → decision → execution intervals).
+
+
+## When NOT to use
+
+- Cannot list 20+ recent signals leadership responded to — skill requires trajectory data.
+- Pre-revenue companies — signal/noise discrimination requires market exposure.
+- Single-decision-maker company (no committee) — bias map is internal, not structural.
+- Currently mid-pivot — let the pivot land before auditing the signal that triggered it.
 
 ---
 

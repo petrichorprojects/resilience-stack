@@ -1,6 +1,24 @@
 ---
 name: customer-truth-extraction
-description: Run a Petrichor Customer Truth Extraction workshop — surface what customers actually believe vs what you think they believe. Includes Telephone Audit, Confidence Inversion Test, Hire/Fire Reconstruction, Churn Autopsy Chain, perception-reality synthesis. Based on The Customer Belief Audit.
+description: Surface what customers actually believe vs what you think they believe, mapping 4 belief layers (Stated, Revealed, Implicit, Counter-belief). Use when NPS and renewal data diverge, when churn surprises leadership, or before redesigning the value proposition.
+version: 1.0.0
+track: intelligence
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- false-familiarity
+- pricing-authority-diagnostic
+- reality-audit
+outputs:
+- customer-belief-map
+- perception-reality-gap-analysis
+- churn-risk-assessment
+- customer-voice-synthesis
+- customer-truth-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Customer Truth Extraction — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Customer Truth Extract
 **Core question**: "What do your customers actually believe about you — vs. what you think they believe?"
 
 **Framework — The Customer Belief Audit**: Maps 4 belief layers — Stated belief (interview answers), Revealed belief (renewal/expansion behavior), Implicit belief (assumed but never tested), Counter-belief (what they would say if they didn't have to be polite). Composite Customer Truth Score = (Revealed - Stated) gap inverted.
+
+
+## When NOT to use
+
+- Pre-PMF companies with <10 customers — sample size too small for belief patterns.
+- Cannot run 5+ Enemy Customer interviews (no permission-to-be-honest customers reachable).
+- Just ran a major customer research project (<90 days) — leverage that first.
+- Customer base is single-buyer enterprise (1-3 accounts) — direct conversation beats this protocol.
 
 ---
 

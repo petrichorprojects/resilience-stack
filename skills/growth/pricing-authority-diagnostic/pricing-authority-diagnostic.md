@@ -1,6 +1,24 @@
 ---
 name: pricing-authority-diagnostic
-description: Run a Petrichor Pricing Authority Diagnostic — audit whether prices signal authority or just fit a spreadsheet. Maps price-value gap, discount patterns, value-metric integrity, willingness-to-pay reality, and produces a 90-day pricing action plan. Based on The Price-Value Integrity Map.
+description: Audit whether prices signal authority or just fit a spreadsheet, mapping discount patterns, value-metric integrity, and willingness-to-pay reality. Use when NRR is below 110%, when discount % is climbing quarter-over-quarter, or before any pricing increase.
+version: 1.0.0
+track: growth
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- revenue-story-audit
+- competitive-blind-spot-mapping
+- customer-truth-extraction
+outputs:
+- price-value-gap-assessment
+- competitive-pricing-map
+- willingness-to-pay-reality-check
+- pricing-architecture-recommendations
+- pricing-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Pricing Authority Diagnostic — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Pricing Authority Diag
 **Core question**: "Do your prices signal authority, or just fit a spreadsheet?"
 
 **Framework — The Price-Value Integrity Map**: Audits 5 integrity points — Price Signal (does price communicate position?), Value Metric (is the unit defensible?), Pricing Psychology (anchors, decoys, defaults), Expansion Economics (NRR mechanics), Increase Readiness (can you raise prices today?). Composite Pricing Authority Score.
+
+
+## When NOT to use
+
+- Pre-product-market-fit — pricing experimentation is the right move, not pricing audit.
+- Cannot pull 4 quarters of closed-won deal data with discount reasons coded — evidence-required.
+- Currently implementing a price increase — wait 90 days post-rollout for accurate signal.
+- Single-tier flat pricing with <12 months of data — insufficient variance for pattern analysis.
 
 ---
 

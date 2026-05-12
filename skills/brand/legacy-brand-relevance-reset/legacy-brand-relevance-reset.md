@@ -1,6 +1,24 @@
 ---
 name: legacy-brand-relevance-reset
-description: Run a Petrichor Legacy Brand Relevance Reset — diagnose when heritage becomes a constraint and design evolution without erasing credibility. Includes Credibility Archaeology, Obituary Inversion, Stakeholder Nostalgia Map, Minimum Viable Signal of evolution. Based on The Heritage-Innovation Bridge.
+description: Diagnose when heritage becomes a constraint and design evolution that does not erase credibility. Use when older buyer cohorts dominate revenue, when innovation launches keep underperforming, or when stakeholders block change citing tradition.
+version: 1.0.0
+track: brand
+tier: 2
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- brand-as-memory-system
+- brand-permission-boundaries
+- relevancy-audit
+outputs:
+- heritage-asset-inventory
+- constraint-assessment
+- evolution-strategy
+- stakeholder-communication-plan
+- legacy-reset-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Legacy Brand Relevance Reset — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Legacy Brand Relevance
 **Core question**: "When does heritage become a constraint — and how do you evolve without erasing what made you credible?"
 
 **Framework — The Heritage-Innovation Bridge**: Sorts heritage assets into 4 categories — Transmission (carries forward, still earns trust), Gifting (carries forward, but as story/legend not as operating reality), Retirement (must be retired to evolve), Reinvention (the seed is good, the expression is dated). Output: Minimum Viable Signal of evolution that proves change without breaking continuity.
+
+
+## When NOT to use
+
+- Brand younger than 10 years — not yet legacy enough to require reset.
+- Recent heritage rebrand (<18 months) — give the market time to absorb.
+- Cannot interview long-tenure customers OR founder/long-tenure employees — both perspectives required.
+- Company in pure crisis (cash <6 months) — heritage debate is the wrong fight.
 
 ---
 

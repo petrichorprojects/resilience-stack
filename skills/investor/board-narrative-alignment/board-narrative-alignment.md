@@ -1,6 +1,24 @@
 ---
 name: board-narrative-alignment
-description: Run a Petrichor Board Narrative Alignment workshop — diagnose whether the board hears the same story the market hears. Includes Information Asymmetry Audit, Board Member Belief Model, Expectation Ratchet Map, Difficult Conversation Pre-Mortem. Based on The Board-Market Coherence Test.
+description: Audit whether the board hears the same story the market hears across 5 axes, plus expectation-ratchet mapping. Use 30 days before any difficult board conversation, after a board surprise, or when board cadence has degraded.
+version: 1.0.0
+track: investor
+tier: 3
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- investor-story-forensics
+- revenue-story-audit
+- signal-vs-noise-audit
+outputs:
+- board-market-coherence-report
+- narrative-divergence-map
+- board-communication-strategy
+- expectation-management-framework
+- board-alignment-scorecard
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Board Narrative Alignment — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Board Narrative Alignm
 **Core question**: "Is your board hearing the same story your market is — or are you running two narratives?"
 
 **Framework — The Board-Market Coherence Test**: Compares the Board Narrative (last 4 deck cycles) against the Market Narrative (sales pitch, customer language, analyst notes) along 5 axes — Why-We-Win, Market Definition, Trajectory Shape, Risk Posture, Competitive Position. Adds Expectation Ratchet Map (every implicit commitment ever stored in board memory).
+
+
+## When NOT to use
+
+- First board meeting — no narrative history to audit yet.
+- Pre-board company (advisors only) — informal expectation management is more efficient.
+- Board has unanimous confidence — defer to the next forcing function.
+- Cannot pull last 4 board decks verbatim — skill requires the full longitudinal record.
 
 ---
 

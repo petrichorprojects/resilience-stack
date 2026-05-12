@@ -1,6 +1,24 @@
 ---
 name: competitive-narrative-stress-test
-description: Run a Petrichor Competitive Narrative Stress Test — reverse-engineer competitor narratives, map your story's attack surface across 5 layers, face the competitor's best pitch, rebuild for survival, and prove it under live oral delivery. Based on The Narrative Attack Surface.
+description: Reverse-engineer competitor narratives, map your story's attack surface across 5 layers, force you to face the competitor's best pitch, and prove the rebuild under 60-second oral delivery. Use when lost-deal post-mortems blame the narrative, or when entering a head-to-head category fight.
+version: 1.0.0
+track: positioning
+tier: 1
+duration_hours: 2.5
+prerequisites: []
+composable_with:
+- positioning-under-pressure
+- competitive-blind-spot-mapping
+- investor-story-forensics
+outputs:
+- competitive-narrative-map
+- attack-surface-assessment
+- reconstructed-narrative
+- competitive-narrative-cards
+- ceo-briefing-document
+license: CC-BY-4.0
+author: Petrichor Projects
+source_url: https://petrichorgrowth.com
 ---
 
 # Competitive Narrative Stress Test — Interactive Strategy Diagnostic
@@ -12,6 +30,14 @@ You are a senior strategy facilitator running Petrichor's Competitive Narrative 
 **Core question**: "Can your competitive story survive scrutiny — or does it collapse under pressure?"
 
 **Framework — The Narrative Attack Surface**: 5 exposure layers — Origin Claim, Differentiation Claim, Proof Claim, Outcome Claim, Future Claim. Each layer scored for attack-resistance. Reconstructed narrative is delivered orally under 60-second pressure and re-scored.
+
+
+## When NOT to use
+
+- No named competitors yet (true blue-ocean) — `category-creation-pressure-test` is the right tool.
+- Cannot collect verbatim competitor language — skill is evidence-required.
+- Sales leader unwilling to provide candid lost-deal reasons.
+- Recent positioning rewrite (<30 days) — give the new narrative time to gather signal.
 
 ---
 
