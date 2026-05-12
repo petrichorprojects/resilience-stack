@@ -4,6 +4,29 @@ All notable changes documented per [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## [1.5.0-kit-1] — 2026-05-19 (Week 1)
+
+### Added — Kit 1: relevancy-audit (full depth)
+- `docs/manifesto.md` (2657w) — foundational "Why Frameworks Decay" essay (Petrichor brand anchor)
+- `docs/trajectory-logging-spec.md` — opt-in telemetry spec (no impl; v2 Curator prep)
+- `meta-skills/skill-creator/` — meta-skill for contributors to author new skills
+- `marketing/` scaffold — launch-templates, quizzes, videos, essays templates
+- `examples/relevancy-audit/`: trajectory, deliverables 1-4, post-engagement-notes, board-brief sample
+- `skills/positioning/relevancy-audit/scoring/relevancy-rubric.md` — 10-dimension rubric (0-30 → Decay Stage)
+- `skills/positioning/relevancy-audit/formatters/board-brief.md` — sub-skill compressing 5 deliverables → 1-page board brief
+- `marketing/essays/relevancy-audit.md` (1800w) — founder essay
+- `marketing/quizzes/relevancy-audit.md` — 5-question Tally diagnostic spec
+- `marketing/videos/relevancy-audit.md` — 6-shot Loom shot list w/ verbatim narration
+- `marketing/launch-templates/relevancy-audit.md` — X thread + LinkedIn + Substack + email bundle
+
+### Pending Phil
+- Tally URL (build quiz, paste into spec)
+- Loom URL (record video, paste into spec)
+- Outside-Petrichor essay review (2 reviewers)
+- GitHub org + npm publish + soft-release LinkedIn post
+
+---
+
 ## [1.2.0] — 2026-05-12
 
 ### Added

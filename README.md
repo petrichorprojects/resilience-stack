@@ -24,6 +24,22 @@ Skills run inside [Claude Code](https://claude.com/claude-code) or the [Claude A
 
 ---
 
+## ⭐ Polished Kits
+
+These skills ship with the full Resilience Stack toolkit: 3 eval cases, worked example, anonymized case study, scoring rubric, board-brief formatter, 5-min video walkthrough, quiz lead magnet, founder long-form essay, and launch copy bundle.
+
+| Kit | Skill | Status | Quiz | Video | Essay |
+|-----|-------|--------|------|-------|-------|
+| 1 | [⭐ relevancy-audit](skills/positioning/relevancy-audit) | Week 1 (2026-05-19) | [marketing](marketing/quizzes/relevancy-audit.md) | [shot list](marketing/videos/relevancy-audit.md) | [essay](marketing/essays/relevancy-audit.md) |
+| 2 | revenue-story-audit | Week 2 (pending) | — | — | — |
+| 3 | competitive-narrative-stress-test | Week 3 (pending) | — | — | — |
+| 4 | pricing-authority-diagnostic | Week 4 (pending) | — | — | — |
+| 5 | investor-story-forensics | Week 5 (pending) | — | — | — |
+
+[Read the manifesto](docs/manifesto.md) · [v1.5 roadmap](ROADMAP.md) · [CHANGELOG](CHANGELOG.md)
+
+---
+
 ## The 18 Frameworks
 
 ### Positioning (Tier 1)
