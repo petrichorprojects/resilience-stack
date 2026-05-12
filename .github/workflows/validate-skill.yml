@@ -1,0 +1,81 @@
+name: Validate Skill Contribution
+
+on:
+  pull_request:
+    paths:
+      - 'skills/**/*.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find changed skill files
+        id: changed
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'skills/*/*.md' | tr '\n' ' ')
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+
+      - name: Validate skill spec
+        if: steps.changed.outputs.files != ''
+        run: |
+          FAIL=0
+          for f in ${{ steps.changed.outputs.files }}; do
+            echo "=== Validating $f ==="
+
+            # Required frontmatter fields
+            for field in name description framework tier track author; do
+              if ! grep -qE "^${field}:" "$f"; then
+                echo "MISSING frontmatter field: $field"
+                FAIL=1
+              fi
+            done
+
+            # Required sections
+            for section in "Persona" "Core question" "Framework" "FACILITATION PROTOCOL" "PHASE 1" "PHASE 2" "PHASE 3" "Deliverables" "Facilitation Rules"; do
+              if ! grep -q "$section" "$f"; then
+                echo "MISSING section: $section"
+                FAIL=1
+              fi
+            done
+
+            # Deliverable count = 5
+            DELIVERABLES=$(grep -cE "^[0-9]+\. \*\*" "$f" || true)
+            if [ "$DELIVERABLES" -lt 5 ]; then
+              echo "Found $DELIVERABLES numbered deliverables — need at least 5"
+              FAIL=1
+            fi
+
+            # Word count bounds
+            WC=$(wc -w < "$f")
+            if [ "$WC" -lt 800 ] || [ "$WC" -gt 5500 ]; then
+              echo "Word count $WC out of bounds (800-5500)"
+              FAIL=1
+            fi
+
+            # No secrets / API keys
+            if grep -iE "(api[_-]?key|secret|password|token).*=.*[a-zA-Z0-9]{20,}" "$f"; then
+              echo "POSSIBLE SECRET DETECTED — review manually"
+              FAIL=1
+            fi
+          done
+
+          if [ "$FAIL" -eq 1 ]; then
+            echo ""
+            echo "Validation failed. See CONTRIBUTING.md for the skill spec template."
+            exit 1
+          fi
+
+      - name: Comment on PR if failed
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Skill validation failed. See workflow logs for missing fields. Fix and push to re-run. See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) for the spec.'
+            })

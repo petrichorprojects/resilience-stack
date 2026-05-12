@@ -1,0 +1,24 @@
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+credentials*
+secrets*
+
+# Build / deps
+node_modules/
+dist/
+*.log
+
+# Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Skill run outputs (created by skill execution)
+**/*-output/
+
+# npm
+npm-debug.log*
+*.tgz
