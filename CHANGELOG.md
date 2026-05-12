@@ -4,6 +4,28 @@ All notable changes documented per [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## [1.5.0-kit-3] — 2026-06-02 (Week 3)
+
+### Added — Kit 3: competitive-narrative-stress-test (full depth)
+- `evals/competitive-narrative-stress-test/`: 3 cases (Tessera baseline, blue-ocean refuse, sanitized adversarial)
+- `examples/competitive-narrative-stress-test/`: input + trajectory + 5 deliverables + post-engagement + board-brief sample
+- `case-studies/competitive-narrative-stress-test/case-01-retail-analytics-decay.md` (991w)
+- `skills/positioning/competitive-narrative-stress-test/scoring/narrative-rubric.md` — 10-dim rubric, Tessera 17/30 Fragile
+- `skills/positioning/competitive-narrative-stress-test/formatters/board-brief.md`
+- `marketing/essays/competitive-narrative-stress-test.md` (2205w)
+- `marketing/quizzes/competitive-narrative-stress-test.md` — 5-Q diagnostic, 4 tiers
+- `marketing/videos/competitive-narrative-stress-test.md` — 6-shot Loom shot list
+- `marketing/launch-templates/competitive-narrative-stress-test.md`
+
+Synthetic: Tessera (retail analytics SaaS, $14M ARR, 6-8mo from Series B). Attack Surface Durability 13/25 → 19/25 post-rebuild.
+
+### Pending Phil
+- Tally URL + Loom URL
+- Outside review (2 strategists)
+- Monday 2026-06-02 launch posts
+
+---
+
 ## [1.5.0-kit-2] — 2026-05-26 (Week 2)
 
 ### Added — Kit 2: revenue-story-audit (full depth)
