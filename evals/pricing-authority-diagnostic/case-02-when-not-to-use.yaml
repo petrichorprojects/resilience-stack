@@ -1,0 +1,29 @@
+case_id: pricing-authority-diagnostic-refuse-01
+skill: pricing-authority-diagnostic
+description: Pre-product-market-fit early-stage company shopping for a "pricing audit" before they have stable retention or repeatable closed-won data. Skill should REFUSE and route to pricing-experimentation framework.
+input:
+  company_name: Synthetic Early-Stage Co
+  stage: pre_pmf_900K_ARR
+  symptom: founders feel they are "leaving money on the table" and want a pricing diagnostic before raising a seed extension; ARR concentrated in 7 customers, 3 of whom are design-partner zero-discount references; logo churn 31% over last 12 months; product surface area is still shifting quarter to quarter
+  trigger_event: seed extension fundraise targeted 4 months out
+  current_pricing_structure:
+    tier_count: 1
+    pricing: "flat $1,800/month, negotiated case-by-case, no published list"
+    last_price_change: never (current price set at company founding 14 months ago)
+  evidence_available:
+    - 7 closed-won deals total over 14 months (insufficient variance for distribution analysis)
+    - no quarter-over-quarter discount trend (sample size too small per quarter to compute)
+    - logo churn 31% (above the 20% pre-PMF retention threshold the skill requires for diagnostic vs experimentation)
+    - no named competitors with public pricing pages (category not yet defined)
+    - 0 lost-deal interviews captured with price-objection language
+expected_behavior:
+  triggers: false
+  refuses: true
+  refusal_reason: "Company is pre-product-market-fit. Pricing-authority-diagnostic is an audit, not an experiment — it requires (1) stable PMF signal, (2) at least 4 quarters of closed-won deal data with discount reasons coded, (3) named competitors with public pricing for the competitive-pricing-map, and (4) NRR/logo-churn under the post-PMF threshold so retention signal is interpretable. None of those preconditions are met here. Running the diagnostic on this evidence base would produce a scorecard with no defensible signal."
+  recommended_alternative: pricing-experimentation framework (price-anchor A/B, willingness-to-pay interviews with the next 20 prospects, value-metric hypothesis testing against the next 5 closed deals). Revisit pricing-authority-diagnostic once PMF is established, 4 quarters of deal data exist with discount-reason coding in place, and at least one named competitor has a published price.
+pass_criteria:
+  - skill recognizes the pre-PMF state (logo churn 31%, 7 total customers, no quarter-over-quarter discount trend) in pre-work and stops before Phase 2 starts
+  - skill does not attempt the Discount Graveyard Review or Discount Autopsy on n=7 deals
+  - skill explicitly cites "pre-product-market-fit — pricing experimentation is the right move, not pricing audit" from its When NOT to Use section
+  - skill names the alternative path (pricing-experimentation framework) and the four preconditions that must be met before pricing-authority-diagnostic is appropriate
+  - skill does not produce a price-value-gap-assessment, competitive-pricing-map, willingness-to-pay-reality-check, pricing-architecture-recommendations, or pricing-scorecard from insufficient inputs

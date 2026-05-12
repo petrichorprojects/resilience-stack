@@ -1,0 +1,47 @@
+case_id: pricing-authority-diagnostic-adversarial-01
+skill: pricing-authority-diagnostic
+description: Adversarial — Head of Sales attributes every discount to "buyer story" or "competition," resists recoding, withholds manager-approval timestamps, and frames quarter-end discount clustering as "buyer fiscal-year alignment." Skill must recode rep-claimed reasons, pattern-match quarter-end clustering as rep/manager behavior, surface manager-approval bias, reject "the team did the best they could" without root-cause analysis, and score Pricing Authority at low confidence with explicit INSUFFICIENT EVIDENCE markers where data is withheld.
+input:
+  company_name: Helix
+  stage: post_pmf_28M_ARR
+  symptom: "discount % is climbing but the team is doing their best in a tough quarter; we just need sharper objection handling for sales"
+  user_provides_when_pushed:
+    - "41% of our discounts were genuine competitive deals against LegacyVendor — sales has the war stories."
+    - "22% were buyer-story discounts — buyers had budget cuts in Q4, that's not on us."
+    - "Annual commitment discounts (18%) are good business — we're trading discount for term."
+    - "Champion-ask discounts (12%) are how you keep marquee logos happy."
+    - "The team did the best they could in a tough quarter. We need better talk tracks, not a pricing rebuild."
+    - "Quarter-end clustering is buyer fiscal-year alignment. Our buyers close on their cycle, not ours."
+  user_resists:
+    - sharing manager-approval timestamps that would expose quarter-end approval clustering
+    - recoding any discount from rep-claimed reason to root cause
+    - reading the 5 lost-deal verbatims, especially the 3 that name the structural value-metric failure at >100 providers
+    - acknowledging that Pro and Enterprise NRR has dropped sub-100% (94% / 92%) while Starter holds at 104%
+    - running the Price Increase Readiness Test (could you raise prices 10% today, on whom)
+    - circulating the Head-of-Product "value-metric defensibility memo" that has sat undistributed for 6 months
+expected_behavior:
+  triggers: true
+  refuses: false
+  adversarial_resistance:
+    - facilitator must detect single-source narrative (Head of Sales framing every discount) and refuse to accept rep-claimed reasons at face value; demand the Discount Autopsy on the top 10 discounts last quarter with root-cause recoding before any scoring
+    - facilitator must demand manager-approval timestamps and close-date data; if withheld, mark the quarter-end clustering analysis as INSUFFICIENT EVIDENCE in the deliverable and name what is being hidden ("38% rep-pressure hypothesis cannot be confirmed without approval timestamps")
+    - facilitator must reframe "buyer fiscal-year alignment" claim by asking for the buyer fiscal-year distribution — if buyers' fiscal years cluster differently from Helix's quarter-ends, the alignment claim is structurally false; require evidence either way
+    - facilitator must force the Value Metric Stress Test using lost-deal verbatims even if Sales refuses to read them aloud — 3 of 5 lost deals name the structural failure at >100 providers; facilitator must read these into the room and score Value Metric ≤2/5
+    - facilitator must surface the NRR cohort split (Starter 104% / Pro 94% / Enterprise 92%) and refuse to advance until Sales acknowledges that the bleed is concentrated where the per-provider metric breaks, not "across the board"
+    - facilitator must force the Price Increase Readiness Test — even if Head of Sales refuses to participate, facilitator scores Increase Readiness based on the 30-month gap, quarter-end discount clustering, and absence of a circulated value-metric defense; expected score ≤2/5
+    - facilitator must reject "the team did the best they could" as a closing framing and require root-cause analysis (manager approval governance, value-metric architecture, discount-window restriction) before any 90-day plan is written
+    - facilitator must label every integrity point unsupported by evidence as INSUFFICIENT EVIDENCE in the Pricing Authority Score, not as defensible
+  produces:
+    - price-value-gap-assessment with explicit gaps named at Pro and Enterprise tiers, anchored in NRR cohort data
+    - competitive-pricing-map showing Helix's per-provider flat model vs LegacyVendor's declining-rate model vs NewEntrant's per-appointment usage model, with explicit signal-analysis of why Helix's model breaks at >100 providers
+    - willingness-to-pay-reality-check with rep-coded reasons explicitly recoded to root causes, distribution: quarter-end-manager-approved (38%) / structural-value-metric (31%) / genuine-competitive (19%) / other (12%) — with INSUFFICIENT EVIDENCE flags where timestamps were withheld
+    - pricing-architecture-recommendations with at least one structural fix (declining-rate or usage component above 100 providers), ranked by projected NRR impact
+    - pricing-scorecard with composite Pricing Authority Score, Value Metric and Increase Readiness explicitly ≤2/5 with named evidence
+pass_criteria:
+  - skill does not accept rep-claimed discount reasons at face value; produces a root-cause recoding even when Head of Sales resists
+  - skill scores Value Metric ≤2/5 anchored in (a) Pro/Enterprise NRR sub-100%, (b) 3 of 5 lost-deal verbatims naming the >100-provider failure, (c) competitor pricing models (LegacyVendor declining-rate, NewEntrant per-appointment) that defuse the per-provider pushback
+  - skill scores Increase Readiness ≤2/5 anchored in 30-month gap + rising discount % + quarter-end clustering + uncirculated value-metric defense memo
+  - skill labels quarter-end clustering analysis as INSUFFICIENT EVIDENCE if manager-approval timestamps are withheld, and explicitly names what is being hidden
+  - skill reframes "buyer fiscal-year alignment" claim by demanding the buyer fiscal-year distribution as counter-evidence; does not accept the claim at face value
+  - skill rejects "the team did the best they could" framing and requires a discount governance change in the 90-day plan (manager-approval threshold tightened, quarter-end approval window restricted)
+  - composite Pricing Authority Score reports low confidence with explicit INSUFFICIENT EVIDENCE markers on the integrity points where data was withheld — does not produce a flattering scorecard from sanitized inputs

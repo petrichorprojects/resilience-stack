@@ -1,0 +1,68 @@
+case_id: pricing-authority-diagnostic-baseline-01
+skill: pricing-authority-diagnostic
+description: Vertical SaaS for healthcare scheduling, $28M ARR, 9 quarters post-PMF, w/ measurable discount climb (8% → 21% over 4 quarters), NRR decline (108% → 96%), expansion gap (8% vs 25% target), and a 30-month gap since the last price change. Board has asked CFO to prepare a pricing review next quarter. Standard positive case.
+input:
+  company_name: Helix (synthetic)
+  stage: post_pmf_28M_ARR
+  symptom: "average discount climbed from 8% (Q1 2025) to 21% (Q1 2026); NRR dropped from 108% (Q4 2024) to 96% (Q1 2026), first sub-100% quarter since PMF; only 8% of customers expanded in 2025 vs 25% target; win-rate flat at 33% (bleed is in price realization, not top-of-funnel); 4 of last 5 lost deals cited price; no price increase shipped in 30 months"
+  trigger_event: board has asked CFO to prepare pricing review next quarter
+  current_pricing_structure:
+    tier_1: { name: Starter, list_price: 12000, value_metric: per-provider-per-month, buyer: solo/1-10 providers }
+    tier_2: { name: Pro, list_price: 45000, value_metric: per-provider-per-month, buyer: group practice 11-100 providers }
+    tier_3: { name: Enterprise, list_price: 120000, value_metric: per-provider-per-month, buyer: health system 100+ providers }
+    last_price_change: Q3 2023 (30 months ago)
+  discount_data_4_quarters:
+    q1_2025: { avg_discount_pct: 8, share_over_20pct: 6, share_over_30pct: 0 }
+    q2_2025: { avg_discount_pct: 11, share_over_20pct: 11, share_over_30pct: 2 }
+    q3_2025: { avg_discount_pct: 15, share_over_20pct: 19, share_over_30pct: 4 }
+    q4_2025: { avg_discount_pct: 18, share_over_20pct: 28, share_over_30pct: 9 }
+    q1_2026: { avg_discount_pct: 21, share_over_20pct: 37, share_over_30pct: 14 }
+    quarter_end_clustering: 62% of discounts >20% signed in last 10 business days of the quarter (same pattern all 4 quarters)
+  rep_coded_reasons:
+    competitive_deal_LegacyVendor: 41
+    buyer_story_budget_timing: 22
+    annual_commitment_multiyear: 18
+    champion_ask: 12
+    other: 7
+  recoded_root_causes_spot_check_30_deals:
+    quarter_end_manager_approved_rep_pressure: 38
+    structural_value_metric_failure_over_100_providers: 31
+    genuine_competitive_LegacyVendor: 19
+    other: 12
+  nrr_cohort_breakdown:
+    starter: { q4_2024: 112, q1_2026: 104 }
+    pro: { q4_2024: 106, q1_2026: 94 }
+    enterprise: { q4_2024: 109, q1_2026: 92 }
+  evidence_available:
+    - 4 quarters of closed-won deal data with list price, sold price, discount %, rep-coded reason, close date, manager approval timestamp
+    - 30-deal CFO/Head-of-Sales spot-recoding of discount root causes
+    - 5 lost-deal interviews Q1 2026 with verbatim buyer price-objection language (3 of 5 name the structural value-metric failure at >100 providers)
+    - competitor pricing teardown for LegacyVendor, NewEntrant (AI-native, usage-based), RegionalCo
+    - NRR cohort data by initial tier (Starter / Pro / Enterprise), last 6 quarters
+    - internal Head-of-Product "value-metric defensibility memo" (never circulated)
+expected_behavior:
+  triggers: true
+  refuses: false
+  produces:
+    - price-value-gap-assessment
+    - competitive-pricing-map
+    - willingness-to-pay-reality-check
+    - pricing-architecture-recommendations
+    - pricing-scorecard
+  duration_estimate_hours: 2.5
+adversarial_checks:
+  - facilitator must recode every rep-claimed discount reason to root cause; rep-coded "competitive deal" / "buyer story" / "champion ask" labels are inadmissible as the final reason — the discount autopsy must produce a root-cause distribution and reject rep-claims that contradict the timestamp data
+  - facilitator must run quarter-end clustering analysis (close-date vs quarter-boundary, manager-approval timestamps) and surface that 38% of discounts are rep-pressure / manager-approval, not buyer pressure — explicitly distinguish rep behavior from buyer behavior
+  - facilitator must stress-test the per-provider value metric by asking the buyer-verification question ("Can the buyer count this themselves? Does the unit scale linearly with value delivered?") — and explicitly mark the metric as structurally failing at >100 providers, anchored in 3 of 5 lost-deal verbatims
+  - facilitator must demand evidence per claim — any pricing claim made by Sales or CEO that is not anchored in deal data, competitor page, or lost-deal verbatim is labeled INSUFFICIENT EVIDENCE in the deliverable
+  - facilitator must run the Price Increase Readiness Test: could Helix raise prices 10% today, on whom, and what proof would they cite? Score must be ≤2/5 on Increase Readiness given a 30-month gap and rising discount %
+  - facilitator must produce a composite Pricing Authority Score across 5 integrity points (Price Signal, Value Metric, Pricing Psychology, Expansion Economics, Increase Readiness) — each scored 1-5 with named evidence
+  - facilitator must reject "the team did the best they could" framing and require root-cause analysis before any 90-day action plan
+pass_criteria:
+  - all 5 deliverables produced and written to ./pricing-authority-output/
+  - rep-coded discount reasons explicitly recoded with named root-cause distribution (quarter-end / structural / genuine competitive / other), not used at face value
+  - Value Metric integrity point scored ≤2/5 with the structural failure at >100 providers named, anchored in lost-deal verbatims and Pro/Enterprise NRR collapse
+  - Increase Readiness integrity point scored ≤2/5 with the 30-month gap and quarter-end discount clustering named as blocking evidence
+  - Pricing Architecture Recommendations name at least one structural change (e.g., declining-rate or usage component above 100 providers) ranked by projected NRR impact
+  - 90-day Pricing Action Plan names: (a) the specific cohort the price increase will apply to, (b) the proof the increase will cite, (c) the discount governance change (manager approval threshold tightened, quarter-end approval window restricted)
+  - competitive-pricing-map names LegacyVendor's declining-rate model and NewEntrant's per-appointment usage metric, with explicit signal analysis of how each defuses Helix's per-provider pushback
