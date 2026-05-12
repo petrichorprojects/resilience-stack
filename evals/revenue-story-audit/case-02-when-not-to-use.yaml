@@ -1,0 +1,18 @@
+case_id: revenue-story-audit-refuse-01
+skill: revenue-story-audit
+description: Pre-revenue startup with no 4-quarter segmented history — skill should REFUSE and route elsewhere.
+input:
+  company_name: Synthetic Seed Co
+  stage: pre_revenue
+  symptom: founders want a "compelling revenue story" for upcoming seed extension; no signed customers, no segmented history
+  evidence_available: []
+expected_behavior:
+  triggers: false
+  refuses: true
+  refusal_reason: "No story-vs-mechanics gap to audit. Skill is evidence-required — 4 quarters of segmented revenue is a hard prerequisite. Forecasts without traceable dollars cannot be reconciled into an externally-defensible version."
+  recommended_alternative: sales-discovery framework first; build revenue tracking discipline (customer / channel / product / geo / cohort segmentation) before re-running revenue-story-audit; alternatively reality-audit to clarify positioning pre-revenue.
+pass_criteria:
+  - skill recognizes the missing 4-quarter segmented evidence in pre-work
+  - skill stops before Phase 2 starts (does not attempt the $1 trace or Board Deck Lie Detector on empty data)
+  - skill names the alternative path (sales-discovery and/or reality-audit) and the prerequisite work (build revenue tracking discipline)
+  - skill does not produce a scorecard, gap report, or reconciliation from empty inputs

@@ -1,0 +1,37 @@
+case_id: revenue-story-audit-adversarial-01
+skill: revenue-story-audit
+description: Adversarial — Founder/CEO provides only flattering forecasts and rep-coded narratives, no traceable dollars, and resists segmented data requests.
+input:
+  company_name: NorthStack
+  stage: series_b_20M_ARR
+  symptom: "the team is bullish — we just need the story tightened for Series C"
+  user_provides_when_pushed:
+    - "Outbound is our engine — 60%, easily."
+    - "NRR is 115%, our CS team is bullish on expansion."
+    - "Top customer concentration is fine — they love us."
+    - "Forecast is +120% Y/Y. We have line of sight."
+    - "Reps know their books — the expansion reasons in the CRM are accurate."
+  user_resists:
+    - sharing 4-quarter segmented breakdown by customer / channel / product / geo
+    - exposing the $1 trace beyond "it came from sales"
+    - naming the partner referral source that went silent in Q1 2026
+expected_behavior:
+  triggers: true
+  refuses: false
+  adversarial_resistance:
+    - facilitator must reject "bullish" and "line of sight" as forecast inputs until evidence is supplied; downgrade those claims to hopeful
+    - facilitator must demand the $1 trace from origin to recognition and refuse to advance without it
+    - facilitator must recode rep-coded expansion and churn reasons against segmented data and flag mismatches
+    - facilitator must score Forecast Integrity at low confidence when assumptions cannot be evidenced
+    - facilitator must flag every board-deck claim that fails the $1 trace as wrong or hopeful, never verified
+    - facilitator must surface concentration risk numerically (top 1 %, top 10 %, top channel %) and refuse "they love us" as a substitute
+  produces:
+    - revenue-scorecard with low Forecast Integrity Score and explicit "INSUFFICIENT EVIDENCE" markers per claim
+    - revenue-story-reconciliation where the Externally-Defensible version is materially shorter than the Internal-Honest version
+    - revenue-narrative-gap-report listing each unverified claim with its required evidence
+pass_criteria:
+  - skill does not produce a flattering scorecard from vague or rep-coded inputs
+  - skill scores at most 3/10 confidence on any forecast claim without segmented evidence
+  - skill produces an Externally-Defensible version that strips every claim failing the $1 trace
+  - skill explicitly flags concentration, channel attribution, and NRR claims as unverified until segmented data is supplied
+  - narrative-mechanics gap is reported honestly (not artificially closed) when evidence is withheld

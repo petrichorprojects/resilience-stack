@@ -1,0 +1,38 @@
+case_id: revenue-story-audit-baseline-01
+skill: revenue-story-audit
+description: Series B fintech ops layer 90 days from Series C kickoff w/ measurable gap between board-deck story and segmented revenue mechanics. Standard positive case.
+input:
+  company_name: NorthStack (synthetic)
+  stage: series_b_20M_ARR
+  symptom: board deck claims diversified mix, 60% outbound, +120% Y/Y, 115% NRR; segmented data shows top 1 = 22%, top 10 = 64%, outbound = 40%, +47% trailing Y/Y, 96% NRR
+  trigger_event: Series C kickoff scheduled in 90 days
+  evidence_available:
+    - 4 quarters segmented revenue (customer, channel, product, geo, cohort)
+    - last 2 board decks (Q3 2025, Q4 2025)
+    - last sales pitch (deck + recorded call Q1 2026)
+    - top 10 deal expansions w/ rep + reason + dollar amount
+    - top 5 churn risks w/ rep + reason + dollar amount
+expected_behavior:
+  triggers: true
+  refuses: false
+  produces:
+    - revenue-narrative-gap-report
+    - growth-mechanics-map
+    - channel-truth-assessment
+    - revenue-story-reconciliation
+    - revenue-scorecard
+  duration_estimate_hours: 2.5
+adversarial_checks:
+  - skill must demand a traceable dollar for every revenue claim (the $1 trace exercise)
+  - skill must recode rep-coded expansion and churn reasons against segmented data, not accept rep narrative
+  - skill must surface single-points-of-failure in concentration heat map (top 1 = 22%, top channel partner went silent)
+  - skill must classify each board-deck claim as verified / extrapolated / hopeful / wrong
+  - skill must downgrade "bullish" forecast inputs to hopeful until evidence is supplied
+  - skill must produce a two-version reconciliation — internal-honest + externally-defensible — not a single story
+pass_criteria:
+  - all 5 deliverables produced and written to ./revenue-audit-output/
+  - narrative-mechanics gap closed to <15% before declaring done
+  - at least 4 board-deck claims explicitly reclassified (e.g., "diversified" → wrong, "+120% Y/Y" → hopeful, "60% outbound" → extrapolated)
+  - Forecast Integrity Score assigned with sensitivity ranges
+  - top concentration risks named (customer, channel, geo) with % and dollar exposure
+  - Externally-Defensible version contains nothing that fails the $1 trace
