@@ -2,7 +2,7 @@
 
 **18 strategy frameworks for positioning that holds under pressure.**
 
-Curated by [Petrichor Projects](https://petrichorgrowth.com). Built from a $45k workshop catalog. Each skill = 50+ hours of framework engineering, packaged as a Claude Code skill you can run in 2.5 hours.
+Curated by [Petrichor Projects](https://petrichorgrowth.com). Built from our workshop catalog. Each skill = 50+ hours of framework engineering, packaged as a Claude Code skill you can run in 2.5 hours.
 
 Not comprehensive. Curated. No filler.
 
