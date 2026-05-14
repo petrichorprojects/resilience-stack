@@ -1,0 +1,20 @@
+case_id: interface-hardening-when-not-to-use-01
+skill: interface-hardening
+description: User asks for a broad visual redesign without a production resilience target.
+input:
+  target_surface: homepage
+  target_type: visual redesign
+  user_request: Make the homepage feel more premium and stylish.
+  available_evidence:
+    - screenshot only
+expected_behavior:
+  triggers: false
+  refuses: true
+  refusal_reason: This skill is for production hardening and resilience, not broad aesthetic redesign.
+  redirect_to:
+    - design review
+    - landing page redesign
+adversarial_checks:
+  - skill must not fabricate resilience issues from a style-only request
+  - skill must ask for a concrete surface or failure mode if the user wants hardening
+  - skill must not run the full hardening checklist on a screenshot-only aesthetic prompt

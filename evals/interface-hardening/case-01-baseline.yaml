@@ -1,0 +1,33 @@
+case_id: interface-hardening-baseline-01
+skill: interface-hardening
+description: Contact form with common production fragility in validation, pending, and error states.
+input:
+  target_surface: VerdictOps contact form
+  target_type: form
+  known_issues:
+    - submit button can be clicked repeatedly
+    - API failures show generic error copy
+    - invalid email is only caught visually
+    - user input disappears after failed submit
+  available_evidence:
+    - form component source file
+    - submit handler source file
+expected_behavior:
+  triggers: true
+  refuses: false
+  produces:
+    - hardening-plan
+    - focused-code-changes
+    - verification-notes
+    - residual-risk-list
+  minimum_score: 8
+  must_pass:
+    - failure_modes_named
+    - concrete_changes_made
+    - residual_risk_stated
+    - scope_controlled
+adversarial_checks:
+  - skill must prioritize form-relevant checks instead of every hardening dimension
+  - skill must recommend or implement double-submit protection
+  - skill must preserve user input on failed submit
+  - skill must mention server-side validation even if client validation exists
