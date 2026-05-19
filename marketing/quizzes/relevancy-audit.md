@@ -1,8 +1,16 @@
 # Quiz Spec — relevancy-audit
 
 ## Tool: Tally.so (free tier)
-## URL: {{tally-url-to-be-added-by-phil}}
-## Title: "Is your positioning still relevant — or solving yesterday's problem?"
+## URL: https://tally.so/r/aQe6A9
+## Title: "What's Your Positioning Decay Stage?"
+
+## v1 Implementation Status (2026-05-18)
+
+- Live form captures: email, first name, 5 multi-choice answers (Q1-Q5)
+- Hidden `score` calculated field present (initial value 0)
+- **Deferred to v1.1**: per-question calc rules that sum Q answers into `score`, plus 4 conditional thank-you tier sections (Stable / Drift / Disconnect / Displacement)
+- **v1 routing approach**: Tally captures raw responses → Beehiiv automation does score sum + tier-specific welcome-email drip
+- **Beehiiv integration**: pending Phil — set up `relevancy-audit-leads` list + 4 tier-tagged drips, connect Tally → Beehiiv via Zapier or native integration
 
 ## Why this quiz exists
 
