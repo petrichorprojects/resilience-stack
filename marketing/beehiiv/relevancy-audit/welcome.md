@@ -1,12 +1,13 @@
 # Welcome Email — relevancy-audit
 
-**Trigger:** Tally form submission → Beehiiv list `relevancy-audit-leads`
+**Publication:** Category Gravity (Beehiiv) — Series 01 Resilience Stack
+**Trigger:** Tally form `aQe6A9` submission → Zapier → Beehiiv tag `taken-relevancy-audit-tier-<n>`
 **Delivery target:** within 60 seconds of submission
 **From:** Phil Rimmler <phil@petrichorgrowth.com>
 **Reply-to:** phil@petrichorgrowth.com
 **Subject (universal):** Your positioning decay stage — {{first_name}}
 
-> Beehiiv setup: 4 automation branches, one per tier tag. Phil splits the body below into 4 send templates and routes by `tier` custom field set by the Tally → Beehiiv mapping.
+> Beehiiv setup: 4 automation branches inside the Category Gravity automation, one per tier tag. Phil splits the body below into 4 send templates. See `marketing/beehiiv/TALLY-BEEHIIV-MAPPING.md` §5 for the universal Category Gravity header/footer wrap.
 
 ---
 

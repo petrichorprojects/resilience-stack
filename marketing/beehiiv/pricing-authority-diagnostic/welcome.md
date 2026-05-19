@@ -1,12 +1,13 @@
 # Welcome Email — pricing-authority-diagnostic
 
-**Trigger:** Tally form submission → Beehiiv list `pricing-authority-diagnostic-leads`
+**Publication:** Category Gravity (Beehiiv) — Series 01 Resilience Stack
+**Trigger:** Tally form `1ANOQL` submission → Zapier → Beehiiv tag `taken-pricing-authority-diagnostic-tier-<n>`
 **Delivery target:** within 60 seconds of submission
 **From:** Phil Rimmler <phil@petrichorgrowth.com>
 **Reply-to:** phil@petrichorgrowth.com
 **Subject (universal):** Your pricing authority tier — {{first_name}}
 
-> Beehiiv setup: 4 automation branches, one per tier tag.
+> Beehiiv setup: 4 automation branches inside the Category Gravity automation. See `marketing/beehiiv/TALLY-BEEHIIV-MAPPING.md` §5 for the universal Category Gravity header/footer wrap.
 
 ---
 

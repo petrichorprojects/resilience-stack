@@ -1,12 +1,13 @@
 # Welcome Email — competitive-narrative-stress-test
 
-**Trigger:** Tally form submission → Beehiiv list `competitive-narrative-stress-test-leads`
+**Publication:** Category Gravity (Beehiiv) — Series 01 Resilience Stack
+**Trigger:** Tally form `jaJg86` submission → Zapier → Beehiiv tag `taken-competitive-narrative-stress-test-tier-<n>`
 **Delivery target:** within 60 seconds of submission
 **From:** Phil Rimmler <phil@petrichorgrowth.com>
 **Reply-to:** phil@petrichorgrowth.com
 **Subject (universal):** Your narrative durability tier — {{first_name}}
 
-> Beehiiv setup: 4 automation branches, one per tier tag.
+> Beehiiv setup: 4 automation branches inside the Category Gravity automation. See `marketing/beehiiv/TALLY-BEEHIIV-MAPPING.md` §5 for the universal Category Gravity header/footer wrap.
 
 ---
 
