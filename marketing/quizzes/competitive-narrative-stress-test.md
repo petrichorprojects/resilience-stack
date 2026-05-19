@@ -1,8 +1,14 @@
 # Quiz Spec — competitive-narrative-stress-test
 
 ## Tool: Tally.so (free tier)
-## URL: {{tally-url-to-be-added-by-phil}}
+## URL: https://tally.so/r/jaJg86
 ## Title: "Can your competitive narrative survive a competitor's best day?"
+
+## v1 Implementation Status (2026-05-18)
+
+- Live form captures: email, first name, 5 multi-choice answers (Q1-Q5)
+- **Deferred to v1.1**: per-Q calc rules + 4 conditional thank-you tier sections (Holding / Fragile / Outflanked / Collapsed)
+- **v1 routing**: Tally captures raw responses → Beehiiv automation scores + tier-routes drips
 
 ## Why this quiz exists
 
