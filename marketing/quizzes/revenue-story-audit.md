@@ -1,8 +1,15 @@
 # Quiz Spec — revenue-story-audit
 
 ## Tool: Tally.so (free tier)
-## URL: {{tally-url-to-be-added-by-phil}}
+## URL: https://tally.so/r/aQAkJE
 ## Title: "Does your revenue story match your revenue mechanics?"
+
+## v1 Implementation Status (2026-05-18)
+
+- Live form captures: email, first name, 5 multi-choice answers (Q1-Q5)
+- **Deferred to v1.1**: per-Q calc rules + 4 conditional thank-you tier sections (Reconciled / Drifting / Inflated / Critical)
+- **v1 routing**: Tally captures raw responses → Beehiiv automation scores + tier-routes drips
+- **Beehiiv integration**: pending Phil — set up `revenue-story-audit-leads` list + 4 tier drips
 
 ## Why this quiz exists
 
