@@ -52,7 +52,7 @@ The quiz is a triage tool, not a content asset. Its only job is to put strategy 
 
 ## Scoring Rubric
 
-### Stage 0 — Stable (0–5 points)
+### Stage 0 — Stable (0–3 points)
 
 **Result page copy:**
 
@@ -78,7 +78,7 @@ You do not need a call. You need a calendar reminder.
 
 ---
 
-### Stage 1 — Drift (6–10 points)
+### Stage 1 — Drift (4–7 points)
 
 **Result page copy:**
 
@@ -104,7 +104,7 @@ You probably do not need a Petrichor engagement. You need a focused internal spr
 
 ---
 
-### Stage 2 — Disconnect (11–15 points)
+### Stage 2 — Disconnect (8–11 points)
 
 **Result page copy:**
 
@@ -130,7 +130,7 @@ The call is not a sales call. It is a triage call. If the answer is "you can fix
 
 ---
 
-### Stage 3 — Displacement (16–20 points)
+### Stage 3 — Displacement (12–15 points)
 
 **Result page copy:**
 
@@ -163,10 +163,10 @@ If we are not, the call ends with the names of two people who are. That is the d
 
 ## Lead routing
 
-- **Stage 0 (Stable, 0–5):** Add to Beehiiv list. Trigger tier-0-stable drip. No human follow-up.
-- **Stage 1 (Drift, 6–10):** Add to Beehiiv list. Trigger tier-1-drift drip. Email-only follow-up. No human outreach.
-- **Stage 2 (Disconnect, 11–15):** Add to Beehiiv list. Trigger tier-2-disconnect drip. Email-only follow-up plus the calendar link inside the welcome email. No proactive outbound from Phil unless the respondent books.
-- **Stage 3 (Displacement, 16–20):** Add to Beehiiv list. Trigger tier-3-displacement drip. Phil personal Loom + email outreach within 48 hours of submission. Calendar link in the welcome email.
+- **Stage 0 (Stable, 0–3):** Add to Beehiiv list. Trigger tier-0-stable drip. No human follow-up.
+- **Stage 1 (Drift, 4–7):** Add to Beehiiv list. Trigger tier-1-drift drip. Email-only follow-up. No human outreach.
+- **Stage 2 (Disconnect, 8–11):** Add to Beehiiv list. Trigger tier-2-disconnect drip. Email-only follow-up plus the calendar link inside the welcome email. No proactive outbound from Phil unless the respondent books.
+- **Stage 3 (Displacement, 12–15):** Add to Beehiiv list. Trigger tier-3-displacement drip. Phil personal Loom + email outreach within 48 hours of submission. Calendar link in the welcome email.
 
 ## QA checklist (before going live)
 

@@ -11,7 +11,7 @@
 
 ---
 
-## Tier 0 — Stable (0–5)
+## Tier 0 — Stable (0–3)
 
 **Subject variant:** Stage 0 — your positioning is holding (no call needed)
 
@@ -33,7 +33,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 1 — Drift (6–10)
+## Tier 1 — Drift (4–7)
 
 **Subject variant:** Stage 1 Drift — here is the kit and the 30-day re-test plan
 
@@ -56,7 +56,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 2 — Disconnect (11–15)
+## Tier 2 — Disconnect (8–11)
 
 **Subject variant:** Stage 2 Disconnect — kit + 30-min triage call
 
@@ -78,7 +78,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 3 — Displacement (16–20)
+## Tier 3 — Displacement (12–15)
 
 **Subject variant:** Stage 3 — I will respond personally within 48 hours
 

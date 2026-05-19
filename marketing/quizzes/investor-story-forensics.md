@@ -50,7 +50,7 @@ The quiz is a triage tool, not a content asset. Its only job is to put operators
 
 ## Scoring Rubric
 
-### Tier 0 — Defensible (0–5 points)
+### Tier 0 — Defensible (0–3 points)
 
 **Result page copy:**
 
@@ -76,7 +76,7 @@ You do not need a call. You need a quarterly calendar reminder.
 
 ---
 
-### Tier 1 — Vulnerable (6–10 points)
+### Tier 1 — Vulnerable (4–7 points)
 
 **Result page copy:**
 
@@ -102,7 +102,7 @@ You probably do not need a Petrichor engagement. You need a focused internal ses
 
 ---
 
-### Tier 2 — Cracking (11–15 points)
+### Tier 2 — Cracking (8–11 points)
 
 **Result page copy:**
 
@@ -128,7 +128,7 @@ The Loom is not a sales pitch. It is the same diagnostic vocabulary we will use 
 
 ---
 
-### Tier 3 — Collapsed (16–20 points)
+### Tier 3 — Collapsed (12–15 points)
 
 **Result page copy:**
 
