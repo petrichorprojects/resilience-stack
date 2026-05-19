@@ -1,122 +1,105 @@
 # Tally → Beehiiv Plumbing Spec
 
-End-to-end data flow for the 5 v1.5 quizzes. Tally captures responses; Beehiiv scores them and routes to the right tier drip.
+End-to-end data flow for the 5 v1.5 quizzes. Tally captures responses; **Category Gravity** (single Beehiiv publication) scores them, tags them, and routes to the right tier drip inside the **Resilience Stack** series.
 
 ---
 
-## 1. Architecture (one diagram)
+## 1. Architecture
 
 ```
-[Tally form] --webhook--> [Zapier zap] --API--> [Beehiiv list + custom fields]
-                                                       |
-                                                  [Automation: score + tier tag]
-                                                       |
-                                                       v
-                                             [4 tier-specific drip emails]
-                                                       |
-                                                       v
-                                                [Subscriber inbox]
+[Tally form × 5] --webhook--> [Zapier zap × 5] --API--> [Beehiiv: Category Gravity (single pub)]
+                                                                    |
+                                                          [Tags applied:
+                                                            series-resilience-stack
+                                                            quiz-<slug>
+                                                            tier-<0|1|2|3>]
+                                                                    |
+                                                                    v
+                                                          [One automation, 20 branches
+                                                            (5 quizzes × 4 tiers)]
+                                                                    |
+                                                                    v
+                                                          [Subscriber inbox]
 ```
 
-One zap per quiz, one Beehiiv publication (or one publication + one tag per quiz — both work). Recommend separate publications because tier-routing automations are simpler against a single list.
+**Key shift from v1 spec:** one Beehiiv publication (`Category Gravity`), not 5. Cross-pollination across quizzes — a relevancy-audit lead who later takes pricing-authority is already a sub, gets both drip arcs in parallel (both fire, tagged separately).
 
 ---
 
-## 2. Beehiiv setup (per quiz)
+## 2. Beehiiv setup (Category Gravity pub)
 
-### 2a. Create publication
+### 2a. Publication
 
-- Name: `Resilience Stack — <quiz-slug>`
+Already created by Phil. Confirm config:
+
+- Name: `Category Gravity`
 - Sender name: `Phil Rimmler`
 - Sender email: `phil@petrichorgrowth.com`
 - Reply-to: `phil@petrichorgrowth.com`
-- Default audience: this publication
+- Series 01 = Resilience Stack (this rollout). Future series = 02, 03, …
 
-### 2b. Custom fields (Settings → Audience → Custom fields)
+### 2b. Custom fields
 
-Add these on every publication. Names must match exactly so the same Zap template works across quizzes.
+Add once on the Category Gravity pub. All 5 zaps write to the same schema.
 
-| Field name | Type | Source |
-|---|---|---|
-| `first_name` | Text | Tally `First name` |
-| `q1` | Text | Tally Q1 answer label |
-| `q2` | Text | Tally Q2 answer label |
-| `q3` | Text | Tally Q3 answer label |
-| `q4` | Text | Tally Q4 answer label |
-| `q5` | Text | Tally Q5 answer label |
-| `score` | Number | Computed in Zap (sum of per-Q point values) |
-| `tier` | Text | Computed in Zap (`tier-0` / `tier-1` / `tier-2` / `tier-3`) |
-| `quiz_slug` | Text | Hardcoded per quiz |
+| Field name | Type | Source | Notes |
+|---|---|---|---|
+| `first_name` | Text | Tally `First name` | |
+| `q1`..`q5` | Text | Tally Q1..Q5 answer labels | Per-quiz semantics differ; tag tracks which quiz |
+| `score` | Number | Computed in Zap | Sum of per-Q point values |
+| `tier` | Text | Computed in Zap | `tier-0` / `tier-1` / `tier-2` / `tier-3` |
+| `quiz_slug` | Text | Hardcoded per Zap | `relevancy-audit`, etc. |
+| `series` | Text | Hardcoded | `resilience-stack` |
+| `last_quiz_taken_at` | Date | Zap sets to `now()` on submission | Updated on every new quiz; powers re-engagement logic |
 
-### 2c. Per-quiz scoring tables
+### 2c. Tags
 
-Each option maps to a numeric value. Zap computes `score = q1_val + q2_val + q3_val + q4_val + q5_val`, then maps to tier.
+Apply on every submission. Multi-tag, additive (never replace).
 
-#### Tier thresholds (universal across all 5 quizzes)
-
-| Score range | Tier |
+| Tag pattern | When set |
 |---|---|
-| 0–5 | `tier-0` |
-| 6–10 | `tier-1` |
-| 11–15 | `tier-2` |
-| 16–20 | `tier-3` |
+| `series-resilience-stack` | On any of the 5 quiz submissions |
+| `quiz-<slug>` | One of: `quiz-relevancy-audit`, `quiz-revenue-story-audit`, `quiz-competitive-narrative-stress-test`, `quiz-pricing-authority-diagnostic`, `quiz-investor-story-forensics` |
+| `tier-<n>` | `tier-0` / `tier-1` / `tier-2` / `tier-3` (most recent quiz's tier) |
+| `taken-<quiz>-tier-<n>` | Stamped tier per quiz. Example: `taken-relevancy-audit-tier-2`. **Never reset.** Lets the automation know which (quiz, tier) drip arcs the lead has already entered. |
 
-#### Per-option point values
+### 2d. Cross-quiz logic
 
-Authoritative source: `marketing/quizzes/<quiz-slug>.md` — "5 Diagnostic Questions" section. Order across all quizzes is: option A = 0 pts, B = 1, C = 2, D = 3 (verified against every quiz spec). The Zap maps by exact-string match on the answer label.
+- Subscriber takes quiz #1 → tagged `series-resilience-stack`, `quiz-relevancy-audit`, `tier-2`, `taken-relevancy-audit-tier-2`
+- Same subscriber later takes quiz #4 → tags become `series-resilience-stack` (already), `quiz-pricing-authority-diagnostic` (added), `tier-3` (replaces `tier-2`), `taken-pricing-authority-diagnostic-tier-3` (added; the `taken-relevancy-audit-tier-2` from before stays).
+- Both drip arcs fire in parallel. The `taken-*` tag prevents the same arc from re-firing if the lead retakes the same quiz at the same tier.
+
+The "most recent tier" tag (`tier-<n>`) drives general re-engagement campaigns (newsletter sends, Petrichor offers). The `taken-*` tags drive drip gating.
 
 ---
 
-## 3. Zapier zap (per quiz)
+## 3. Zapier zap (per quiz × 5)
 
-One zap per quiz. Identical structure; only the Tally form ID, Beehiiv publication ID, and `quiz_slug` change.
+Identical structure to v1 spec, but Step 5 + 6 target Category Gravity instead of per-quiz pubs.
 
 ### Step 1 — Trigger: Tally → "New submission"
 
-- Connect Tally account
-- Form: pick by Tally form ID
-  - relevancy-audit: `aQe6A9`
-  - revenue-story-audit: `aQAkJE`
-  - competitive-narrative-stress-test: `jaJg86`
-  - pricing-authority-diagnostic: `1ANOQL`
-  - investor-story-forensics: `ob5gjM`
+Form IDs:
+- relevancy-audit: `aQe6A9`
+- revenue-story-audit: `aQAkJE`
+- competitive-narrative-stress-test: `jaJg86`
+- pricing-authority-diagnostic: `1ANOQL`
+- investor-story-forensics: `ob5gjM`
 
 ### Step 2 — Formatter (Numbers → Run Lookup Table) × 5
 
-One formatter step per question. Map answer label → point value.
+One per question. Source of truth: `marketing/quizzes/<slug>.md` "5 Diagnostic Questions" section.
 
-Example for relevancy-audit Q1:
-
-| Lookup key | Lookup value |
-|---|---|
-| `Improving` | `0` |
-| `Flat` | `1` |
-| `Down 3–15%` | `2` |
-| `Down 16% or more` | `3` |
-
-Repeat for Q2–Q5 using the values in `marketing/quizzes/<quiz-slug>.md`. If a label does not match, the formatter returns blank — wire a default of `0` to avoid breaking the sum.
+Option order: A = 0, B = 1, C = 2, D = 3 (verified across all 5 quizzes). Default `0` on unmatched label.
 
 ### Step 3 — Formatter (Numbers → Perform Math)
 
-Operation: Add
-Inputs: Q1 value, Q2 value, Q3 value, Q4 value, Q5 value
-Output: `score`
+`score = q1 + q2 + q3 + q4 + q5`
 
-### Step 4 — Formatter (Utilities → Lookup Table)
-
-Map `score` → `tier`. One lookup with 4 entries:
-
-| Min | Max | Tier |
-|---|---|---|
-| 0 | 5 | `tier-0` |
-| 6 | 10 | `tier-1` |
-| 11 | 15 | `tier-2` |
-| 16 | 20 | `tier-3` |
-
-Zapier's Lookup Table is exact-match. Easier alternative: use a Code step (JavaScript) — one line:
+### Step 4 — Code by Zapier (JavaScript)
 
 ```javascript
-const score = inputData.score;
+const score = Number(inputData.score);
 return { tier:
   score <= 5  ? 'tier-0' :
   score <= 10 ? 'tier-1' :
@@ -125,47 +108,52 @@ return { tier:
 };
 ```
 
+**Note on tier 3 reachability:** with current spec (5 Qs × 4 options × 0–3 pts) max score = 15, so tier-3 is unreachable. **Decision pending — see §6.** Until rebucket lands, the `score <= 15` branch catches all tier-2+ submissions.
+
 ### Step 5 — Beehiiv → "Create or update subscriber"
 
-- Publication: <pick per quiz>
+- Publication: **Category Gravity**
 - Email: Tally `Email`
-- Custom fields (map from prior steps):
+- Custom fields:
   - `first_name` ← Tally `First name`
-  - `q1`..`q5` ← Tally answer labels
-  - `score` ← Step 3 output
-  - `tier` ← Step 4 output
-  - `quiz_slug` ← hardcoded (`relevancy-audit`, etc.)
-- Subscribe to publication: yes
-- Welcome email: **off** (the tier-conditional welcome lives in Beehiiv automation, not the default publication welcome)
+  - `q1`..`q5` ← Tally answers
+  - `score` ← Step 3
+  - `tier` ← Step 4
+  - `quiz_slug` ← hardcoded per Zap
+  - `series` ← `resilience-stack`
+  - `last_quiz_taken_at` ← Zap `Format → Date/Time → now`
+- Subscribe: yes
+- Default publication welcome: **off** (tier welcome lives in automation)
 
-### Step 6 — Beehiiv → "Add tag to subscriber"
+### Step 6 — Beehiiv → "Add tags to subscriber"
 
-- Tag: value of `tier` from Step 4
+Add 4 tags in one call:
+1. `series-resilience-stack`
+2. `quiz-<slug>` (hardcoded per Zap)
+3. `tier-<n>` from Step 4
+4. `taken-<slug>-tier-<n>` (concatenate)
 
-Beehiiv automations are tag-triggered (see §4).
+⚠️ **Remove `tier-*` first** before adding the new one. Beehiiv's "Add tag" is additive, so a re-take would leave both `tier-2` and `tier-3` on the sub. Use a `Remove tag` step first, looping over `tier-0`/`tier-1`/`tier-2`/`tier-3`, then add the new one. The `taken-*` tag from prior takes stays.
 
 ---
 
-## 4. Beehiiv automation (per publication)
+## 4. Beehiiv automation (single, inside Category Gravity)
 
-One automation per publication, 4 branches by `tier` tag.
+One automation. Trigger: subscriber tagged with any `taken-*-tier-*` tag.
 
-### Trigger
+### Branch structure
 
-Subscriber receives tag `tier-0` OR `tier-1` OR `tier-2` OR `tier-3`.
+20 branches = 5 quizzes × 4 tiers. Each branch:
 
-### Branches
+1. If/Else gate on `taken-<slug>-tier-<n>` tag
+2. Send tier welcome email (immediate) — body from `marketing/beehiiv/<slug>/welcome.md` matching tier section
+3. Wait → drip 1 (Day 2)
+4. Wait → drip 2 (Day 4)
+5. Wait → drip 3 (Day 7)
+6. Wait → drip 4 (Day 10)
+7. Wait → drip 5 (Day 14)
 
-Each branch is one If/Else gate on `tier` tag, then:
-
-1. Send tier welcome email (immediate) — body from `marketing/beehiiv/<quiz-slug>/welcome.md` § matching tier
-2. Wait — see schedule below
-3. Send drip email 1
-4. Wait
-5. Send drip email 2
-6. ... (5 drips total)
-
-### Drip schedule (universal across all 4 tiers)
+### Drip schedule (universal)
 
 | Day after submission | Email |
 |---|---|
@@ -176,77 +164,109 @@ Each branch is one If/Else gate on `tier` tag, then:
 | Day 10 | Drip 4 |
 | Day 14 | Drip 5 |
 
-Tier 3 deviates: Phil sends a personal Loom + email manually within 48h. The drip still fires.
+Tier 3 deviation: Phil sends a personal Loom + email manually within 48h. Drip still fires in parallel.
 
 ### Drip copy
 
-Pending — Phase A of this rollout. Topic outlines already speced in `marketing/quizzes/<quiz-slug>.md` under each tier.
+Pending Phase A. Topics outlined in `marketing/quizzes/<slug>.md` per tier.
 
 ---
 
-## 5. Test plan (before going live)
+## 5. Welcome email branding (Category Gravity wrap)
 
-For each quiz, fire one synthetic submission per tier (4 boundary tests):
+All 5 welcome files in `marketing/beehiiv/<slug>/welcome.md` keep their tier-conditional body. Add this universal wrap inside Beehiiv send templates:
 
-| Test | Answers | Expected score | Expected tier |
+**Header (above the personalized body):**
+
+```
+[Category Gravity]
+Series 01 — Resilience Stack
+```
+
+**Footer (below the personalized body, above the sign-off):**
+
+```
+You are reading Category Gravity, Petrichor Projects' newsletter on
+positioning, pricing, and narrative discipline. This email is part of
+Series 01 — Resilience Stack. Reply to this email to talk to me directly.
+
+— Phil
+```
+
+**Unsubscribe + sender block:** Beehiiv default footer, no edits.
+
+---
+
+## 6. ⚠️ Tier 3 unreachable — decision pending
+
+Max attainable score with current scoring (5 Qs × 4 options × 0–3 pts) = 15. Tier 3 (16–20) is unreachable.
+
+**Options:**
+
+- **A) Rebucket tiers** (recommended): Tier 0: 0–3 / Tier 1: 4–7 / Tier 2: 8–11 / Tier 3: 12–15
+- B) Re-weight Q3 + Q4 to 0/1/3/5 → max = 22, original ranges preserved
+- C) Keep current, treat Tier 2 max as effective Tier 3
+
+Until decision: 5 quiz specs, 5 welcome emails, and the Step 4 lookup all reflect the old 0–5/6–10/11–15/16–20 ranges. Going live before fixing this means real submissions never trigger Tier 3 drips.
+
+Recommend Option A. I will execute the 10-file edit in a separate PR after Phil confirms.
+
+---
+
+## 7. Test plan (per quiz, before going live)
+
+For each quiz, fire 4 synthetic submissions, one per tier under the rebucketed thresholds (assumes Option A):
+
+| Test | Answer pattern | Score | Expected tier |
 |---|---|---|---|
-| Boundary 0/1 | All option A | 0 | `tier-0` |
-| Boundary 1/2 | 2× option C + 3× option B | 7 | `tier-1` |
-| Boundary 2/3 | All option C | 10 | `tier-1` |
-| Mid Tier 2 | 1× A + 4× C | 8 ... wait that's tier-1 |
-| Mid Tier 2 | 5× option C | 10 → tier-1 |
-| Mid Tier 2 | 3× C + 2× D | 12 | `tier-2` |
-| Mid Tier 3 | 5× option D | 15 | `tier-2` |
-| Max | 5× D + override? | 15 (max possible w/ 4-option / 0–3) |
+| Tier 0 boundary | All option A | 0 | `tier-0` |
+| Tier 1 boundary | 3× option A + 2× option B | 2 | `tier-0` (sanity) |
+| Tier 1 mid | 4× option B + 1× option C | 6 | `tier-1` |
+| Tier 2 mid | 5× option B + 0 (3B + 2C) | 7 → 8 | check `tier-2` start at 8 |
+| Tier 3 boundary | All option D | 15 | `tier-3` |
 
-*Note: max attainable score = 5 questions × 3 max points = 15. **Tier 3 (16–20) is unreachable with the current scoring table.** This is a spec bug — fix one of:*
-
-- *Option A: re-weight Q3 + Q4 (the most diagnostic) to 0/1/3/5 → max = 22, Tier 3 reachable*
-- *Option B: re-bucket tiers to 0–3 / 4–7 / 8–11 / 12–15 → Tier 3 starts at 12*
-
-*Recommend Option B (cleaner, no per-question re-weighting, preserves the 5-question / 4-option structure). Update the spec in `marketing/quizzes/<quiz-slug>.md` and the Zap lookup tables before going live.*
-
-Confirm with Phil before final wiring.
+Boundary verification: scores 3, 4, 7, 8, 11, 12 — confirm correct tier per the lookup.
 
 ---
 
-## 6. Failure modes & guardrails
+## 8. Failure modes & guardrails
 
 | Failure | Detection | Mitigation |
 |---|---|---|
-| Tally answer label changes (typo fix, etc.) | Zap fails Step 2 lookup | Lookup default `0`; Zap email alert on blank score |
-| Zapier throttles / errors | Submission in Tally but not in Beehiiv | Zapier retries 3×; failed runs in Zap history; weekly reconciliation script: `tally_submissions - beehiiv_subscribers WHERE quiz_slug=X` |
-| Beehiiv custom field schema drift | Subscriber created but score/tier missing | Lock schema; only edit via PR; document changes here |
-| Two tier tags assigned to same subscriber (re-submission with different answers) | Subscriber in multiple drip branches | Beehiiv automation: clear all `tier-*` tags before adding the new one |
-| Beehiiv welcome email fires by default | Subscriber gets generic welcome + tier welcome | Disable default welcome on every publication |
-| Tier 3 not reachable (current scoring) | All real submissions cap at score 15 | Fix per §5 before launch |
+| Tally answer label drifts | Zap Step 2 returns blank | Lookup default `0`; weekly reconciliation Zap |
+| Zap throttle / error | Tally submission has no matching Beehiiv sub | Zapier 3× retry; weekly diff script |
+| Cross-quiz tier collision | Sub has multiple `tier-*` tags | Step 6 removes all `tier-*` before add (per §3 Step 6) |
+| Default Beehiiv welcome fires | Sub gets generic + tier welcome | Disable default welcome on Category Gravity pub |
+| Repeat submission re-fires drip | Same `taken-*` tag re-added | Beehiiv tag-add is idempotent; automation gates on `taken-*` not `tier-*` |
+| Tier 3 unreachable | All submissions cap at tier-2 | §6 — rebucket before launch |
 
 ---
 
-## 7. Phil's checklist
+## 9. Cost & limits
 
-Order matters. Skip any step and the pipeline silently fails.
-
-- [ ] Decide tier scoring fix (§5) — re-bucket or re-weight
-- [ ] Update tier thresholds in all 5 `marketing/quizzes/*.md` files and all 5 `marketing/beehiiv/*/welcome.md` files
-- [ ] Create 5 Beehiiv publications (one per quiz)
-- [ ] Add 9 custom fields to each publication (§2b)
-- [ ] Build 5 Zapier zaps (§3) — start with relevancy-audit, duplicate + edit for others
-- [ ] Build 5 Beehiiv automations (§4) with the welcome bodies from `marketing/beehiiv/<quiz>/welcome.md`
-- [ ] Capture Calendly URL and Loom URLs; replace `{{calendly-url}}` and `{{loom-url}}` in the welcome emails
-- [ ] Run 4 boundary tests per quiz (§5)
-- [ ] Verify Tier 3 personal-response SLA against Phil's actual inbox capacity
-- [ ] Soft launch with relevancy-audit first; observe one full week before enabling quizzes 2–5
+- Tally: free tier, unlimited submissions across 5 forms
+- Zapier: 5 zaps × ~8 tasks per submission. **Recommend Zapier Starter ($29/mo, 750 tasks)** for first 3 months.
+- Beehiiv: Category Gravity on free tier covers 2,500 subscribers. Single pub means cross-quiz subs don't double-count. Upgrade trigger: 2,000 subs (80% of free tier).
+- **Total v1.5 marketing automation cost: $29/mo** until Beehiiv free tier breaches.
 
 ---
 
-## 8. Cost & limits
+## 10. Phil's checklist
 
-- Tally: free tier covers all 5 forms, unlimited submissions
-- Zapier: 5 zaps × 100 free tasks/month is tight. Each submission = ~7 tasks (1 trigger + 5 formatters + 1 Beehiiv create + 1 tag = 8). 100 tasks / 8 = ~12 submissions/month free. **Recommend Zapier Starter ($29/mo, 750 tasks)** for the first 3 months, evaluate volume, then decide.
-- Beehiiv: free tier covers 2,500 subscribers per publication. 5 publications × 2,500 = 12,500 free leads before paid tier kicks in. Comfortable for v1.5 launch.
-- Total v1.5 marketing automation cost: **$29/mo** until Beehiiv free tier breaches.
+Order matters.
+
+- [ ] Confirm tier rebucket decision (§6) — recommend Option A
+- [ ] If Option A: apply rebucket PR across `marketing/quizzes/*.md` + `marketing/beehiiv/*/welcome.md`
+- [ ] Confirm Category Gravity pub config (§2a)
+- [ ] Add 9 custom fields + 4 tag patterns to Category Gravity (§2b, §2c)
+- [ ] Build 1 Zap (relevancy-audit) end-to-end; verify tag application + tier assignment
+- [ ] Duplicate Zap × 4 for remaining quizzes; swap form ID + `quiz_slug`
+- [ ] Build Beehiiv automation w/ 20 branches; load welcome bodies from `marketing/beehiiv/<slug>/welcome.md` w/ Category Gravity header/footer wrap (§5)
+- [ ] Capture Calendly URL + 5 Loom URLs; replace placeholders in welcome bodies
+- [ ] Run §7 test plan per quiz (4 submissions each = 20 total)
+- [ ] Soft launch relevancy-audit; observe 1 week before enabling quizzes 2–5
+- [ ] Set Beehiiv upgrade alert at 2,000 subs
 
 ---
 
-*Resilience Stack v1.5 · CC BY 4.0 · Petrichor Projects*
+*Resilience Stack v1.5 · Category Gravity Series 01 · Petrichor Projects · CC BY 4.0*

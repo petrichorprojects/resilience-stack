@@ -1,12 +1,13 @@
 # Welcome Email — revenue-story-audit
 
-**Trigger:** Tally form submission → Beehiiv list `revenue-story-audit-leads`
+**Publication:** Category Gravity (Beehiiv) — Series 01 Resilience Stack
+**Trigger:** Tally form `aQAkJE` submission → Zapier → Beehiiv tag `taken-revenue-story-audit-tier-<n>`
 **Delivery target:** within 60 seconds of submission
 **From:** Phil Rimmler <phil@petrichorgrowth.com>
 **Reply-to:** phil@petrichorgrowth.com
 **Subject (universal):** Your revenue-narrative tier — {{first_name}}
 
-> Beehiiv setup: 4 automation branches, one per tier tag.
+> Beehiiv setup: 4 automation branches inside the Category Gravity automation. See `marketing/beehiiv/TALLY-BEEHIIV-MAPPING.md` §5 for the universal Category Gravity header/footer wrap.
 
 ---
 

@@ -1,12 +1,13 @@
 # Welcome Email — investor-story-forensics
 
-**Trigger:** Tally form submission → Beehiiv list `investor-story-forensics-leads`
+**Publication:** Category Gravity (Beehiiv) — Series 01 Resilience Stack
+**Trigger:** Tally form `ob5gjM` submission → Zapier → Beehiiv tag `taken-investor-story-forensics-tier-<n>`
 **Delivery target:** within 60 seconds of submission
 **From:** Phil Rimmler <phil@petrichorgrowth.com>
 **Reply-to:** phil@petrichorgrowth.com
 **Subject (universal):** Your investor narrative tier — {{first_name}}
 
-> Beehiiv setup: 4 automation branches, one per tier tag.
+> Beehiiv setup: 4 automation branches inside the Category Gravity automation. See `marketing/beehiiv/TALLY-BEEHIIV-MAPPING.md` §5 for the universal Category Gravity header/footer wrap.
 
 ---
 
