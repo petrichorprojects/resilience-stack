@@ -4,6 +4,14 @@ All notable changes documented per [Keep a Changelog](https://keepachangelog.com
 
 ---
 
+## Unreleased
+
+### Added
+- `meta-skills/interface-hardening/interface-hardening.md` — targeted resilience hardening for UI surfaces, forms, workflows, dashboards, and API-bound interfaces.
+- `evals/interface-hardening/` — baseline form hardening, when-not-to-use redirect, and adversarial dashboard rubber-stamp cases.
+
+---
+
 ## [1.5.0] — 2026-06-16 (Week 5 — HN Launch Week)
 
 ### Added — Kit 5: investor-story-forensics (full depth) + HN launch

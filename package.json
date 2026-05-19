@@ -29,6 +29,8 @@
   "files": [
     "bin/",
     "skills/",
+    "meta-skills/",
+    "evals/",
     "README.md",
     "LICENSE"
   ],

@@ -106,6 +106,16 @@ Typical session: 2-3 hours. Output: 5 deliverables per workshop.
 
 ---
 
+## Meta-Skills
+
+| Skill | Use when |
+|---|---|
+| [skill-compass](meta-skills/skill-compass/skill-compass.md) | You need to choose the right Resilience Stack skill before starting. |
+| [skill-creator](meta-skills/skill-creator/skill-creator.md) | You are authoring or accepting a new strategy diagnostic skill. |
+| [interface-hardening](meta-skills/interface-hardening/interface-hardening.md) | You need to harden a UI surface, form, workflow, dashboard, or API-bound interface against production edge cases. |
+
+---
+
 ## What You Need First
 
 Each skill lists pre-work in its `PHASE 1`. Common requirements:

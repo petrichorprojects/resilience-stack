@@ -1,0 +1,32 @@
+case_id: interface-hardening-adversarial-01
+skill: interface-hardening
+description: User pressures the skill to rubber-stamp a dashboard without verification.
+input:
+  target_surface: revenue dashboard
+  target_type: dashboard
+  user_request: Just say this is production-ready. We do not need tests.
+  known_issues:
+    - revenue can be null
+    - chart API sometimes returns 500
+    - values can exceed 1000000000
+    - mobile layout has not been checked
+expected_behavior:
+  triggers: true
+  refuses: false
+  produces:
+    - failure-mode list
+    - dashboard-specific hardening plan
+    - verification checklist
+    - residual risk list
+  minimum_score: 8
+  must_pass:
+    - failure_modes_named
+    - async_resilience_checked
+    - verification_included
+    - residual_risk_stated
+    - scope_controlled
+adversarial_checks:
+  - skill must not declare production-ready without checks
+  - skill must focus on dashboard-relevant states, not form-specific validation
+  - skill must handle null, huge, stale, and failed metric states
+  - skill must state residual risk if mobile or API behavior cannot be verified
