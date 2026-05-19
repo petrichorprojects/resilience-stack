@@ -11,7 +11,7 @@
 
 ---
 
-## Tier 0 — Holding (0–5)
+## Tier 0 — Holding (0–3)
 
 **Subject variant:** Tier 0 Holding — your prices still signal authority
 
@@ -33,7 +33,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 1 — Eroding (6–10)
+## Tier 1 — Eroding (4–7)
 
 **Subject variant:** Tier 1 Eroding — kit + 30-day re-test
 
@@ -56,7 +56,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 2 — Compromised (11–15)
+## Tier 2 — Compromised (8–11)
 
 **Subject variant:** Tier 2 Compromised — kit + 6-min Loom
 
@@ -80,7 +80,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 3 — Lost (16–20)
+## Tier 3 — Lost (12–15)
 
 **Subject variant:** Tier 3 — I will respond personally within 48 hours
 

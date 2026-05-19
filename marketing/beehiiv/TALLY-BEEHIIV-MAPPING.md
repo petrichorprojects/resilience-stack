@@ -101,14 +101,14 @@ Option order: A = 0, B = 1, C = 2, D = 3 (verified across all 5 quizzes). Defaul
 ```javascript
 const score = Number(inputData.score);
 return { tier:
-  score <= 5  ? 'tier-0' :
-  score <= 10 ? 'tier-1' :
-  score <= 15 ? 'tier-2' :
+  score <= 3  ? 'tier-0' :
+  score <= 7  ? 'tier-1' :
+  score <= 11 ? 'tier-2' :
                 'tier-3'
 };
 ```
 
-**Note on tier 3 reachability:** with current spec (5 Qs × 4 options × 0–3 pts) max score = 15, so tier-3 is unreachable. **Decision pending — see §6.** Until rebucket lands, the `score <= 15` branch catches all tier-2+ submissions.
+Tier thresholds: 0–3 / 4–7 / 8–11 / 12–15. Matches the score ceiling (5 Qs × 4 options × 0–3 pts = 15 max). All 4 tiers reachable.
 
 ### Step 5 — Beehiiv → "Create or update subscriber"
 
@@ -197,35 +197,37 @@ Series 01 — Resilience Stack. Reply to this email to talk to me directly.
 
 ---
 
-## 6. ⚠️ Tier 3 unreachable — decision pending
+## 6. Tier thresholds (resolved 2026-05-19)
 
-Max attainable score with current scoring (5 Qs × 4 options × 0–3 pts) = 15. Tier 3 (16–20) is unreachable.
+Rebucketed to fit the score ceiling. Max attainable = 15 (5 Qs × 4 options × 0–3 pts). New thresholds applied across all 5 quiz specs (`marketing/quizzes/*.md`), all 5 welcome emails (`marketing/beehiiv/*/welcome.md`), and the Zap Step 4 lookup (§3).
 
-**Options:**
+| Tier | Range | Reachable |
+|---|---|---|
+| Tier 0 | 0–3 | yes |
+| Tier 1 | 4–7 | yes |
+| Tier 2 | 8–11 | yes |
+| Tier 3 | 12–15 | yes |
 
-- **A) Rebucket tiers** (recommended): Tier 0: 0–3 / Tier 1: 4–7 / Tier 2: 8–11 / Tier 3: 12–15
-- B) Re-weight Q3 + Q4 to 0/1/3/5 → max = 22, original ranges preserved
-- C) Keep current, treat Tier 2 max as effective Tier 3
-
-Until decision: 5 quiz specs, 5 welcome emails, and the Step 4 lookup all reflect the old 0–5/6–10/11–15/16–20 ranges. Going live before fixing this means real submissions never trigger Tier 3 drips.
-
-Recommend Option A. I will execute the 10-file edit in a separate PR after Phil confirms.
+Original ranges (0–5 / 6–10 / 11–15 / 16–20) are deprecated. Any external references should use the new ranges.
 
 ---
 
 ## 7. Test plan (per quiz, before going live)
 
-For each quiz, fire 4 synthetic submissions, one per tier under the rebucketed thresholds (assumes Option A):
+Fire 8 synthetic submissions per quiz — 4 tier mid-points + 4 boundary checks.
 
 | Test | Answer pattern | Score | Expected tier |
 |---|---|---|---|
-| Tier 0 boundary | All option A | 0 | `tier-0` |
-| Tier 1 boundary | 3× option A + 2× option B | 2 | `tier-0` (sanity) |
-| Tier 1 mid | 4× option B + 1× option C | 6 | `tier-1` |
-| Tier 2 mid | 5× option B + 0 (3B + 2C) | 7 → 8 | check `tier-2` start at 8 |
-| Tier 3 boundary | All option D | 15 | `tier-3` |
+| Tier 0 min | All option A | 0 | `tier-0` |
+| Tier 0 max | 3× A + 2× B (mix to 3) | 3 | `tier-0` |
+| Tier 1 min | 4× A + 1× D (or 1× A + 4× B → 4) | 4 | `tier-1` |
+| Tier 1 max | 5× B (or 1× A + 4× B + Q3=C → 7) | 7 | `tier-1` |
+| Tier 2 min | 2× C + 3× B + Q5=D — sum to 8 | 8 | `tier-2` |
+| Tier 2 max | 3× C + 1× B + 1× D — sum to 11 | 11 | `tier-2` |
+| Tier 3 min | 4× C + 1× D — sum to 12 | 12 | `tier-3` |
+| Tier 3 max | All option D | 15 | `tier-3` |
 
-Boundary verification: scores 3, 4, 7, 8, 11, 12 — confirm correct tier per the lookup.
+Boundary verification (must match exactly): scores 3 → tier-0, 4 → tier-1, 7 → tier-1, 8 → tier-2, 11 → tier-2, 12 → tier-3.
 
 ---
 
@@ -255,8 +257,7 @@ Boundary verification: scores 3, 4, 7, 8, 11, 12 — confirm correct tier per th
 
 Order matters.
 
-- [ ] Confirm tier rebucket decision (§6) — recommend Option A
-- [ ] If Option A: apply rebucket PR across `marketing/quizzes/*.md` + `marketing/beehiiv/*/welcome.md`
+- [x] Tier thresholds resolved — rebucketed to 0–3 / 4–7 / 8–11 / 12–15 (§6)
 - [ ] Confirm Category Gravity pub config (§2a)
 - [ ] Add 9 custom fields + 4 tag patterns to Category Gravity (§2b, §2c)
 - [ ] Build 1 Zap (relevancy-audit) end-to-end; verify tag application + tier assignment

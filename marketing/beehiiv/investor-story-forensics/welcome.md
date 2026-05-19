@@ -11,7 +11,7 @@
 
 ---
 
-## Tier 0 — Defensible (0–5)
+## Tier 0 — Defensible (0–3)
 
 **Subject variant:** Tier 0 Defensible — your deck and your data room agree
 
@@ -33,7 +33,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 1 — Fragile (6–10)
+## Tier 1 — Fragile (4–7)
 
 **Subject variant:** Tier 1 Fragile — kit + 30-day re-test
 
@@ -56,7 +56,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 2 — Vulnerable (11–15)
+## Tier 2 — Vulnerable (8–11)
 
 **Subject variant:** Tier 2 Vulnerable — kit + 6-min Loom
 
@@ -80,7 +80,7 @@ Petrichor Projects · [petrichorgrowth.com](https://petrichorgrowth.com)
 
 ---
 
-## Tier 3 — Indefensible (16–20)
+## Tier 3 — Indefensible (12–15)
 
 **Subject variant:** Tier 3 — I will respond personally within 48 hours
 

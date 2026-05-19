@@ -51,7 +51,7 @@ The quiz is a triage tool, not a content asset. Its only job is to put operators
 
 ## Scoring Rubric
 
-### Tier 0 — Reconciled (0–5 points)
+### Tier 0 — Reconciled (0–3 points)
 
 **Result page copy:**
 
@@ -77,7 +77,7 @@ You do not need a call. You need a calendar reminder.
 
 ---
 
-### Tier 1 — Drifting (6–10 points)
+### Tier 1 — Drifting (4–7 points)
 
 **Result page copy:**
 
@@ -103,7 +103,7 @@ You probably do not need a Petrichor engagement. You need a focused internal ses
 
 ---
 
-### Tier 2 — Inflated (11–15 points)
+### Tier 2 — Inflated (8–11 points)
 
 **Result page copy:**
 
@@ -129,7 +129,7 @@ The Loom is not a sales pitch. It is the same diagnostic vocabulary we will use 
 
 ---
 
-### Tier 3 — Critical (16–20 points)
+### Tier 3 — Critical (12–15 points)
 
 **Result page copy:**
 
@@ -160,10 +160,10 @@ You do not need to download the kit before we talk. You can — it is the same d
 
 ## Lead routing
 
-- **Tier 0 (Reconciled, 0–5):** Add to Beehiiv list. Trigger tier-0-reconciled drip. No human follow-up.
-- **Tier 1 (Drifting, 6–10):** Add to Beehiiv list. Trigger tier-1-drifting drip. Email-only follow-up. No human outreach.
-- **Tier 2 (Inflated, 11–15):** Add to Beehiiv list. Trigger tier-2-inflated drip. Private Loom in the welcome email. No proactive outbound from Phil unless the respondent books.
-- **Tier 3 (Critical, 16–20):** Add to Beehiiv list. Trigger tier-3-critical drip. Phil personal email + Loom outreach within 48 hours of submission. Calendar link in the welcome email.
+- **Tier 0 (Reconciled, 0–3):** Add to Beehiiv list. Trigger tier-0-reconciled drip. No human follow-up.
+- **Tier 1 (Drifting, 4–7):** Add to Beehiiv list. Trigger tier-1-drifting drip. Email-only follow-up. No human outreach.
+- **Tier 2 (Inflated, 8–11):** Add to Beehiiv list. Trigger tier-2-inflated drip. Private Loom in the welcome email. No proactive outbound from Phil unless the respondent books.
+- **Tier 3 (Critical, 12–15):** Add to Beehiiv list. Trigger tier-3-critical drip. Phil personal email + Loom outreach within 48 hours of submission. Calendar link in the welcome email.
 
 ## QA checklist (before going live)
 
