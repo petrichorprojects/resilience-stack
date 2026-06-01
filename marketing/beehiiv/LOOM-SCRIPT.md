@@ -31,11 +31,9 @@
 
 ### 0:00 – 0:30 — Cold open, name the audience
 
-> Word up.
+> Discount creep eight to twenty-one percent. Quarter-end approval pattern eighteen to thirty-eight. NRR one-oh-two on the deck, ninety-six on the cohort. Same company. Twelve months. The discount was a symptom.
 >
-> If you came back Tier 2 or Tier 3 on whichever Resilience Stack quiz brought you here, this is the walkthrough I promised. Six minutes. No intro music, no sponsor read, no "in this video I'm going to..."
->
-> I'm going to walk you through one case at the depth I'd walk it inside an engagement. Then I'll show you what you actually get if we work together. If by minute six you think the kit on its own is enough, run the kit. That's the deal.
+> If you came back Tier 2 or Tier 3 on whichever Resilience Stack quiz brought you here, this is the walkthrough I promised. Six minutes. No intro music, no sponsor read, no "in this video I'm going to..." I'm going to walk you through one case at the depth I'd walk it inside an engagement. Then I'll show you what you actually get if we work together. If by minute six you think the kit on its own is enough, run the kit. That's the deal.
 
 *[On-screen: open repo tab to the pricing-authority-diagnostic folder. Cursor hovers over the kit structure.]*
 
