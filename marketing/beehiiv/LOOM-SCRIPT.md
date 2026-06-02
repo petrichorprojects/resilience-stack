@@ -129,8 +129,6 @@
 >
 > Reputation engineering is not the act of being right once. It is the discipline of staying right while the world keeps moving. If the world has moved away from the pricing model you wrote at Series A — and the trailing-data says it has — the question is not whether to refresh. The question is whether you do it before the market does it to you.
 >
-> Word up.
->
 > — Phil
 
 *[On-screen: end on the GitHub repo URL visible. Camera bubble center for the last five seconds.]*
